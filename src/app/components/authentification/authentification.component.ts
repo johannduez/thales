@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Commande } from 'src/app/classes/commande';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-authentification',
@@ -9,7 +10,7 @@ import { Commande } from 'src/app/classes/commande';
 })
 export class AuthentificationComponent implements OnInit {
 
-  constructor(private router:Router) { }
+  constructor(private router:Router,private auth:AuthService) { }
 
   ngOnInit(): void {
   }
@@ -24,7 +25,7 @@ f(){
    let str:string=JSON.stringify(commande);
   sessionStorage.setItem("commande",str);
   console.log(commande);
-  window.location.reload();
- 
+  //window.location.reload();
+  this.auth.isLoggedIn=true;
 }
 }

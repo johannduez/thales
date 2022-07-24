@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 import { Commande } from 'src/app/classes/commande';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-header',
@@ -10,7 +11,7 @@ import { Commande } from 'src/app/classes/commande';
 export class HeaderComponent implements OnInit {
   commande:Commande=new Commande();
   langue:string="";
-  constructor(public translate: TranslateService) {
+  constructor(public translate: TranslateService,private auth:AuthService) {
     this.translate.addLangs(['fr','en']);
     this.translate.setDefaultLang('fr');
    }
@@ -27,6 +28,9 @@ export class HeaderComponent implements OnInit {
   switchLang(lang: string) {
     this.translate.use(lang);
     sessionStorage.setItem("langue",lang);
+  }
+  get authentification():boolean {
+    return this.auth.isLoggedIn;
   }
 
 }

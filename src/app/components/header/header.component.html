@@ -23,23 +23,23 @@
                                 {{'entete.produits'|translate}}
                             </a>
                         </li>
-                         <li class="nav-item" *ngIf="commande==null">
+                         <li class="nav-item" *ngIf="!authentification">
                             <a class="nav-link text-white" href="/client/inscription">
                                 {{'entete.inscription'|translate}}</a>
                         </li>
-                        <li class="nav-item" *ngIf="commande==null">
+                        <li class="nav-item" *ngIf="!authentification">
                             <a class="nav-link text-white" [routerLink]="['../../authentification']">
                                 {{'entete.authentification'|translate}}</a>
                         </li>
-                         <li class="nav-item" *ngIf="commande!=null">
+                         <li class="nav-item" *ngIf="authentification">
                             <a class="nav-link text-white" [routerLink]="['../../recapitulatif']">
                                 {{'entete.choix'|translate}}</a>
                         </li>
-                        <li class="nav-item" *ngIf="commande!=null">
-                            <a class="nav-link text-white" href="/client/deconnexion">
+                        <li class="nav-item" *ngIf="authentification">
+                            <a class="nav-link text-white" [routerLink]="['../../deconnexion']">
                                 {{'entete.deconnexion'|translate}}</a>
                         </li>
-                         <li class="nav-item dropdown" *ngIf="commande!=null">
+                         <li class="nav-item dropdown" *ngIf="authentification">
 
                             <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdown" role="button"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -61,7 +61,7 @@
                         </li>
                     </ul>
                 </div>
-                <div class="text-white ml-5 mr-5" *ngIf="commande!=null">
+                <div class="text-white ml-5 mr-5" *ngIf="authentification">
                     {{'entete.bonjour'|translate}} {{commande.client.prenom}} {{commande.client.nom}}
                 </div>
                 <div class="ml-3 mr-3">
