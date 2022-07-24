@@ -17,6 +17,8 @@ import { ValidercommandeComponent } from './components/validercommande/validerco
 import { AjoutarticleComponent } from './components/ajoutarticle/ajoutarticle.component';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { AccueilComponent } from './components/accueil/accueil.component';
+
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
@@ -32,7 +34,8 @@ export function HttpLoaderFactory(http: HttpClient) {
     DialogComponent,
     RecapitulatifComponent,
     ValidercommandeComponent,
-    AjoutarticleComponent
+    AjoutarticleComponent,
+    AccueilComponent
   ],
   imports: [
     BrowserModule,

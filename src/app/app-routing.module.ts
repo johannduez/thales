@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AccueilComponent } from './components/accueil/accueil.component';
 import { AjoutarticleComponent } from './components/ajoutarticle/ajoutarticle.component';
 import { AuthentificationComponent } from './components/authentification/authentification.component';
 import { MagasinComponent } from './components/magasin/magasin.component';
@@ -10,7 +11,8 @@ const routes: Routes = [{path:'magasin',component:MagasinComponent},
 {path:'authentification',component:AuthentificationComponent},
 {path:'recapitulatif',component:RecapitulatifComponent},
 {path:'validercommande',component:ValidercommandeComponent},
-{path:'ajoutarticle',component:AjoutarticleComponent}];
+{path:'ajoutarticle',component:AjoutarticleComponent},
+{path:'accueil',component:AccueilComponent}];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
