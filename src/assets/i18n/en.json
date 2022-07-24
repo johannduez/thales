@@ -1,0 +1,81 @@
+{
+	"article": {
+		"identifiant":"Identifier",
+        "nom":"Name",
+        "description":"Description",
+        "tarif":"Price",
+        "categorie":"Categorie",
+        "image":"Image",
+        "ajouter":"Add",
+        "telephone":"Smartphone",
+        "ordinateur":"Computer",
+        "electromenager":"Appliances",
+        "nommess":"Name is required",
+        "descriptionmess":"Description is required",
+        "tarifmess":"The price is required",
+        "imagemess":"Image is required",
+        "categoriemess":"Category is required",
+        "annuler":"Cancel"
+	},
+    "magasin":{
+        "ordinateur":"Computer",
+        "electromenager":"Appliances",
+        "prixminimum":"Min price:",
+        "prixmaximum":"Max price:",
+        "nom":"Name:",
+        "prix":"Price",
+        "categorie":"Categorie",
+        "telephone":"Smartphone",
+        "panier":"Add to cart"
+    },
+    "entete":{
+        "produit":"Our products",
+        "inscription":"Sign up",
+        "authentification":"Log in",
+         "choix":"Choice of items",
+        "commandes":"Orders",
+        "deconnexion":"Disconnect",
+        "connexionadmin":"Log in as an administrator",
+        "ajoutproduit":"Add a product",
+        "modifproduit":"Update/Delete a product",
+        "produits":"Display all the products",
+        "bonjour":"Hello",
+        "administration":"Administration",
+        "titre":"The future accessible to all"
+    },
+    "dialogue":{
+        "message":"The item is added to the cart",
+        "fermer":"close"
+    },
+    "panier":{
+        "titre1":"Choose what you want to buy",
+        "titre20":"The order of",
+        "titre21":"( Total amount:",
+        "titre22":"€ )",
+        "article":"Article :",
+        "quantite":"Quantity :",
+        "quantite2":"Quantity",
+        "articles":"Articles",
+        "prixtotal":"Total price",
+        "ajouter":"Add",
+        "viderpanier":"Emptying your shopping cart",
+        "validerpanier":"Validate the shopping cart",
+        "retourpanier":"Return to the shopping cart",
+        "valider":"Validate your order"
+    },
+    "valider":{
+        "felicitation":"Congratulations",
+        "valider":"Your order has been validated",
+        "montant":"The total amount is",
+        "euro":"€",
+        "envoi":"The order will be sent to the following address:"
+    },
+    "footer":{
+        "categorie":"Categories",
+        "mention":"Legal Notice",
+        "politique":"Privacy Policy",
+        "plan":"Sitemap",
+        "centre":"Shopping center vert bocage 289 av.Wertheim 13300 Salon de Provence"
+    }
+
+}

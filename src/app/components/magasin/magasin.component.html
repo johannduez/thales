@@ -1,0 +1,155 @@
+
+<div class=" d-flex flex-row">
+    <div class=" col-2">
+        <!--<form:form method="POST" modelAttribute="filtre">-->
+        <div *ngIf="commande!=null" class="m-2 d-flex flex-row justify-content-center">
+            <div >
+                <img src="assets/img/basket.svg" class="panier rounded mx-auto d-block" alt="...">
+            </div>
+            <div class="prix m-2"> {{commande.prixTotal}} €</div>
+        </div>
+
+        <div class="card m-2 mt-5">
+
+            <article class="filter-group">
+                <header class="card-header"> <a (click)="hideme[0] = !hideme[0]" aria-expanded="true">
+                        <h3 class="title">
+                            {{'magasin.categorie'|translate}}
+                        </h3>
+                    </a> </header>
+                <div class="filter-content collapse show" id="collapse_2" [hidden]="!hideme[0]">
+                    <div class="card-body  d-flex flex-column">
+                        <label class="custom-control custom-checkbox d-flex">
+                            <input type="checkbox" [(ngModel)]="cOrdi" path="ordinateur" value="1"
+                                class="custom-control-input" (ngModelChange)="filtre()" />
+                            <div class="custom-control-label m-1">
+                                {{'magasin.ordinateur'|translate}}
+                            </div>
+                        </label> <label class="custom-control custom-checkbox  d-flex">
+                            <input type="checkbox" [(ngModel)]="cTel" path="telephone" value="1"
+                                class="custom-control-input" (ngModelChange)="filtre()" />
+
+                            <div class="custom-control-label m-1">
+                                {{'magasin.telephone'|translate}}
+                            </div>
+                        </label> <label class="custom-control custom-checkbox  d-flex">
+                            <input type="checkbox" [(ngModel)]="cElec" path="electromenager" value="1"
+                                class="custom-control-input" (ngModelChange)="filtre()" />
+
+                            <div class="custom-control-label m-1">
+                                {{'magasin.electromenager'|translate}}
+                            </div>
+                        </label>
+                    </div>
+
+                </div>
+            </article>
+            <!-- filter-group .// -->
+            <article class="filter-group">
+                <header class="card-header"> <a (click)="hideme[1] = !hideme[1]" aria-expanded="true">
+                        <h3 class="title">
+                            {{'magasin.nom'|translate}}
+                        </h3>
+                    </a> </header>
+                <div class="filter-content collapse show" id="collapse_4" [hidden]="!hideme[1]">
+                    <div class="card-body">
+                        <!-- <label>Nom:</label> 
+						<input type="test" class="form-control"
+							maxlength="45" /> -->
+                        <label path="nom">
+                            {{'magasin.nom'|translate}}
+                        </label>
+                        <input path="nom" type="test" class="form-control" maxlength="45" [(ngModel)]="fNom"
+                            (ngModelChange)="filtre()" />
+                    </div>
+                    <!-- card-body.// -->
+                </div>
+            </article>
+            <!-- filter-group .// -->
+            <article class="filter-group">
+                <header class="card-header">
+                    <a (click)="hideme[2] = !hideme[2]" aria-expanded="true">
+                        <h3 class="title">
+                            {{'magasin.prix'|translate}}
+                        </h3>
+                    </a>
+                </header>
+                <div class="filter-content collapse show" id="collapse_3" [hidden]="!hideme[2]">
+                    <div class="card-body">
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <!-- <label>Min</label> 
+								<input class="form-control" placeholder="0"
+									type="number"> -->
+                                <label path="prixMin">
+                                    {{'magasin.prixminimum'|translate}}
+                                </label>
+                                <input path="prixMin" [(ngModel)]="fPMin" type="number" class="form-control"
+                                    (ngModelChange)="filtre()" />
+                            </div>
+                            <div class="form-group text-right col-md-6">
+                                <!-- <label>Max</label> 
+								
+								<input class="form-control"
+									placeholder="100000" type="number"> -->
+                                <label path="prixMax">
+                                    {{'magasin.prixmaximum'|translate}}
+                                </label>
+                                <input path="prixMax" [(ngModel)]="fPMax" type="number" class="form-control"
+                                    (ngModelChange)="filtre()" />
+                            </div>
+                        </div>
+                        <!-- form-row.// 
+                                    <button type="submit" class="btn btn-block btn-primary">Filtrer</button>-->
+
+                    </div>
+                    <!-- card-body.// -->
+                </div>
+            </article>
+            <!-- filter-group .// -->
+
+
+        </div>
+        <!--  </form:form>-->
+    </div>
+    <div class=" col-10">
+        <div class="liste d-flex flex-wrap col-11">
+
+            <div class="article col-3" *ngFor="let art of articlesBase2 | paginate: { itemsPerPage: 8, currentPage: pages }">
+                <div class="zoom-image">
+                    <img [src]="art.image" class="rounded mx-auto d-block" alt="...">
+                </div>
+                <div>
+                    <div class="centre">
+                        <a class="text-decoration-none" (click)="hideme[art.id+3] = !hideme[art.id+3]"><i>
+                                {{art.nom}}
+                            </i></a>
+
+                    </div>
+                    <div [hidden]="!hideme[art.id+3]" class="centre desciption">
+                        {{art.description}}
+                    </div>
+                    <div class="prix centre">
+                        {{art.tarif}}
+                        &euro;
+                    </div>
+                    <div  class="centre m-2" *ngIf="commande!=null">
+                        <button type="submit" class="btn btn-primary" (click)="ajouter(art)">
+                            {{'magasin.panier'|translate}}
+                           
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+        <div id="pagination" class="d-flex justify-content-center">
+            <pagination-controls (pageChange)="pages = $event"></pagination-controls>
+        </div>
+
+
+    </div>
+</div>
+
+

@@ -1,0 +1,41 @@
+.imageEntete {
+    display: flex;
+    justify-content: center;
+}
+
+.hCar {
+    overflow: hidden;
+    height: 550px;
+}
+
+.carousel img {
+    max-height: 550px;
+}
+
+.alert {
+    padding-top: 2%;
+    padding-bottom: 2%;
+    padding-left: 2%;
+    padding-right: 2%;
+}
+
+.imageEntete {
+    background-image: url(https://png.pngtree.com/thumb_back/fw800/background/20220215/pngtree-blue-gradient-e-commerce-banner-background-image_923895.jpg);
+    background-repeat: no-repeat, repeat;
+    background-size: cover;
+    background-position: center;
+    min-height: 180px;
+}
+
+.imageEntete h1 {
+    font-family: Arial black;
+    font-weight: bold;
+    color: red;
+    font-size: 3.5em;
+}
+
+.imageEntete h3 {
+    font-family: Segoe Script;
+    color: white;
+    font-size: 2.5em;
+}

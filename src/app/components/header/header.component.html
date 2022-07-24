@@ -1,0 +1,81 @@
+<div class="entete">
+    <div class="imageEntete">
+        <div class="d-flex flex-column justify-content-center align-items-center">
+            <h1>E-Lectronique</h1><br>
+            <h3>
+                {{'entete.titre'|translate}}
+            </h3>
+        </div>
+    </div>
+    <div class="navbarContainer">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+            <div class="container-fluid">
+                <a class="navbar-brand text-white" href="/accueil/accueil">E-lectronique</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link active text-white" aria-current="page" [routerLink]="['../../magasin']">
+                                {{'entete.produits'|translate}}
+                            </a>
+                        </li>
+                         <li class="nav-item" *ngIf="commande==null">
+                            <a class="nav-link text-white" href="/client/inscription">
+                                {{'entete.inscription'|translate}}</a>
+                        </li>
+                        <li class="nav-item" *ngIf="commande==null">
+                            <a class="nav-link text-white" [routerLink]="['../../authentification']">
+                                {{'entete.authentification'|translate}}</a>
+                        </li>
+                         <li class="nav-item" *ngIf="commande!=null">
+                            <a class="nav-link text-white" [routerLink]="['../../recapitulatif']">
+                                {{'entete.choix'|translate}}</a>
+                        </li>
+                        <li class="nav-item" *ngIf="commande!=null">
+                            <a class="nav-link text-white" href="/client/deconnexion">
+                                {{'entete.deconnexion'|translate}}</a>
+                        </li>
+                         <li class="nav-item dropdown" *ngIf="commande!=null">
+
+                            <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdown" role="button"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                {{'entete.administration'|translate}}
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <!--<c:if test="${empty admininistration}">-->
+                                <a class="dropdown-item" href="/admin/authentification">
+                                    {{'entete.connexionadmin'|translate}}</a>
+                                <!-- </c:if>
+                                    <c:if test="${!empty admininistration}">-->
+                                <a class="dropdown-item"  [routerLink]="['../../ajoutarticle']">
+                                    {{'entete.ajoutproduit'|translate}}</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="/article/liste">
+                                    {{'entete.produits'|translate}}</a>
+                                <!-- </c:if>-->
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="text-white ml-5 mr-5" *ngIf="commande!=null">
+                    {{'entete.bonjour'|translate}} {{commande.client.prenom}} {{commande.client.nom}}
+                </div>
+                <div class="ml-3 mr-3">
+                    <span class="form-inline">
+                        <select class="form-control " #selectedLang (change)="switchLang(selectedLang.value)">
+                            <option *ngFor="let language of translate.getLangs()" [value]="language"
+                                [selected]="language == this.langue">
+                                {{language}}
+                            </option>
+                        </select>
+                    </span>
+                </div>
+            </div>
+        </nav>
+    </div>
+</div>
+

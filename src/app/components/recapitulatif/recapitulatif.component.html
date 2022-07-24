@@ -1,0 +1,49 @@
+<div class="d-flex justify-content-center">
+    <br>
+    <h1>
+        {{'panier.titre20' | translate}} {{commande.client.prenom}} {{commande.client.nom }}
+        {{'panier.titre21' | translate}} {{commande.prixTotal }} {{'panier.titre22' | translate}}
+    </h1>
+</div>
+<div class="tab">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    {{'panier.articles' | translate}}
+                </th>
+                <th>
+                    {{'panier.quantite' | translate}}
+                </th>
+                <th>
+                    {{'panier.prixtotal' | translate}}
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+                <tr *ngFor="let ligne  of commande.lignes">
+                    <td>
+                        {{ligne.article.nom }}
+                    </td>
+                    <td>
+                        {{ligne.quantite }}
+                    </td>
+                    <td>
+                        {{ligne.prix }}
+                    </td>
+                </tr>
+
+        </tbody>
+    </table>
+</div>
+
+<div class="d-flex flex-row">
+    <div class="retourPanier">
+        <a href="/commande/panier"><input type="button" class="btn btn-primary m-1 p-1" name="button"
+            value=" {{'panier.retourpanier' | translate}}" /></a>
+    </div>
+    <div class="validerCommande">
+        <input type="button" class="btn btn-primary m-1 p-1"
+            name="button" value="{{'panier.valider' | translate}}" (click)="valider()"/>
+    </div>
+</div>

@@ -1,0 +1,80 @@
+{
+	"article": {
+		"identifiant":"Identifiant",
+        "nom":"Nom",
+        "description":"Description",
+        "tarif":"Tarif",
+        "categorie":"Catégorie",
+        "image":"Image",
+        "ajouter":"Ajouter",
+        "telephone":"Téléphone",
+        "ordinateur":"Ordinateur",
+        "electromenager":"Electroménager",
+        "nommess":"Le nom est obligatoire",
+        "descriptionmess":"La description est obligatoire",
+        "tarifmess":"Le tarif est obligatoire",
+        "imagemess":"L'image est obligatoire",
+        "categoriemess":"La catégorie est obligatoire",
+        "annuler":"Annuler"
+	},
+    "magasin":{
+        "ordinateur":"Ordinateur",
+        "electromenager":"Electroménager",
+        "prixminimum":"Prix minimum:",
+        "prixmaximum":"Prix maximum:",
+        "nom":"Nom:",
+        "prix":"Prix",
+        "categorie":"Catégorie",
+        "telephone":"Téléphone",
+        "panier":"Ajouter au panier"
+    },
+    "entete":{
+        "produit":"Nos produits",
+        "inscription":"Inscription",
+        "authentification":"Authentification",
+         "choix":"Choix des articles",
+        "commandes":"Commandes",
+        "deconnexion":"Déconnexion",
+        "connexionadmin":"Se connecter en tant qu'administrateur",
+        "ajoutproduit":"Ajouter un produit",
+        "modifproduit":"Modifier/supprimer un produit",
+        "produits":"Tous les produits",
+        "bonjour":"Bonjour",
+        "administration":"Administration",
+        "titre":"L'avenir accessible pour tous"
+    },
+    "dialogue":{
+        "message":"L'article a été ajouté au panier",
+        "fermer":"Fermer"
+    },
+    "panier":{
+        "titre1":"Fais ta propre sélection",
+        "titre20":"La commande de",
+        "titre21":"( Montant panier:",
+        "titre22":"€ )",
+        "article":"Article :",
+        "quantite":"Quantité :",
+        "quantite2":"Quantité",
+        "articles":"Articles",
+        "prixtotal":"Prix total",
+        "ajouter":"Ajouter",
+        "viderpanier":"Vider le panier",
+        "validerpanier":"Valider le panier",
+        "retourpanier":"Retour au panier",
+        "valider":"Valider la commande"
+    },
+    "valider":{
+        "felicitation":"Félicitation",
+        "valider":"Votre commande est validée",
+        "montant":"Le montant total est de",
+        "euro":"€",
+        "envoi":"La commande sera envoyé à l'adresse suivante :"
+    },
+    "footer":{
+        "categorie":"Catégories",
+        "mention":"Mentions légales",
+        "politique":"Politique de confidentialité",
+        "plan":"Plan du site",
+        "centre":"Centre commercial vert bocage 289 av.Wertheim 13300 Salon de Provence"
+    }
+}
