@@ -32,5 +32,11 @@ export class HeaderComponent implements OnInit {
   get authentification():boolean {
     return this.auth.isLoggedIn;
   }
+  nom():string{
+    return this.auth.nom;
+  }
+  prenom():string{
+    return this.auth.prenom;
+  }
 
 }

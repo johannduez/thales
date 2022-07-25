@@ -62,7 +62,7 @@
                     </ul>
                 </div>
                 <div class="text-white ml-5 mr-5" *ngIf="authentification">
-                    {{'entete.bonjour'|translate}} {{commande.client.prenom}} {{commande.client.nom}}
+                    {{'entete.bonjour'|translate}} {{prenom()}} {{nom()}}
                 </div>
                 <div class="ml-3 mr-3">
                     <span class="form-inline">

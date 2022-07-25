@@ -27,5 +27,7 @@ f(){
   console.log(commande);
   //window.location.reload();
   this.auth.isLoggedIn=true;
+  this.auth.nom=commande.client.nom;
+  this.auth.prenom=commande.client.prenom;
 }
 }
