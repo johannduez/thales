@@ -96,11 +96,8 @@
         "erreur": "Identifier or Password incorrect",
         "inscription": "Registration",
         "erreurInscription": "Please choose another identifier",
-<<<<<<< HEAD
-        "erreurIdFlag": "Please choose a positive identifier"
-=======
+        "erreurIdFlag": "Please choose a positive identifier",
         "ok":"Modified profile"
->>>>>>> a166860654843c604ecc5d74e9831d36c26e2e10
         
     },
     "admin":{

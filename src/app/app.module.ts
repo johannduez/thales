@@ -23,13 +23,10 @@ import { PanierComponent } from './components/panier/panier.component';
 import { ArticlesComponent } from './components/articles/articles.component';
 import { ArticleComponent } from './components/article/article.component';
 import { InscriptionComponent } from './components/inscription/inscription.component';
-<<<<<<< HEAD
 import { HistoriqueComponent } from './components/historique/historique.component';
-=======
 import { AdminComponent } from './components/admin/admin.component';
 import { ProfilComponent } from './components/profil/profil.component';
 import { ClientComponent } from './components/client/client.component';
->>>>>>> a166860654843c604ecc5d74e9831d36c26e2e10
 
 
 
@@ -54,13 +51,10 @@ export function HttpLoaderFactory(http: HttpClient) {
     ArticlesComponent,
     ArticleComponent,
     InscriptionComponent,
-<<<<<<< HEAD
-    HistoriqueComponent
-=======
+    HistoriqueComponent,
     AdminComponent,
     ProfilComponent,
     ClientComponent
->>>>>>> a166860654843c604ecc5d74e9831d36c26e2e10
   ],
   imports: [
     BrowserModule,

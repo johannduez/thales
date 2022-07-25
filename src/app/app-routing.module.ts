@@ -27,7 +27,7 @@ const routes: Routes = [{path:'magasin',component:MagasinComponent},
 {path:'articles',component:ArticlesComponent},
 {path:'article/:id',component:ArticleComponent},
 {path:'inscription',component:InscriptionComponent},
-{path:'historique',component:HistoriqueComponent}];
+{path:'historique',component:HistoriqueComponent},
 {path:'admin',component:AdminComponent},
 {path:'profil',component:ProfilComponent},
 {path:'client',component:ClientComponent}];

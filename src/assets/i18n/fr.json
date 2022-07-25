@@ -96,11 +96,8 @@
         "erreur": "Identifiant ou mot de passe incorrecte",
         "inscription": "Inscription",
         "erreurInscription": "Veuillez choisir un autre identifiant",
-<<<<<<< HEAD
-        "erreurIdFlag": "Veuillez choisir un identifiant positif"
-=======
+        "erreurIdFlag": "Veuillez choisir un identifiant positif",
         "ok":"Profil modifié"
->>>>>>> a166860654843c604ecc5d74e9831d36c26e2e10
         
     },
     "admin":{
