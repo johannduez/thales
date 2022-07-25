@@ -94,7 +94,8 @@
         "connexion": "Connexion",
         "erreur": "Identifiant ou mot de passe incorrecte",
         "inscription": "Inscription",
-        "erreurInscription": "Veuillez choisir un autre identifiant"
+        "erreurInscription": "Veuillez choisir un autre identifiant",
+        "ok":"Profil modifié"
         
     },
     "admin":{
@@ -104,5 +105,12 @@
         "idmess": "Identifiant obligatoire",
         "passwordmess": "Mot de passe obligatoire",
         "actif": "Compte non actif."
+    },
+    "profil":{
+        "information":"Information",
+        "nom":"Nom",
+        "prenom":"Prenom",
+        "adresse":"Adresse"
+
     }
 }

@@ -94,7 +94,8 @@
         "connexion": "Login",
         "erreur": "Identifier or Password incorrect",
         "inscription": "Registration",
-        "erreurInscription": "Please choose another identifier"
+        "erreurInscription": "Please choose another identifier",
+        "ok":"Modified profile"
         
     },
     "admin":{
@@ -104,6 +105,13 @@
          "idmess": "Identifier required",
         "passwordmess": "Password required",
         "actif":"Account not active."
+    },
+    "profil":{
+        "information":"Information",
+        "nom":"Lastname",
+        "prenom":"Firstname",
+        "adresse":"Address"
+
     }
 
 }

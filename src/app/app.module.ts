@@ -24,6 +24,8 @@ import { ArticlesComponent } from './components/articles/articles.component';
 import { ArticleComponent } from './components/article/article.component';
 import { InscriptionComponent } from './components/inscription/inscription.component';
 import { AdminComponent } from './components/admin/admin.component';
+import { ProfilComponent } from './components/profil/profil.component';
+import { ClientComponent } from './components/client/client.component';
 
 
 
@@ -48,7 +50,9 @@ export function HttpLoaderFactory(http: HttpClient) {
     ArticlesComponent,
     ArticleComponent,
     InscriptionComponent,
-    AdminComponent
+    AdminComponent,
+    ProfilComponent,
+    ClientComponent
   ],
   imports: [
     BrowserModule,

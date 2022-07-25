@@ -1,0 +1,53 @@
+<div>
+<div class="d-flex justify-content-center">
+    <div class="col-4 authentification m-2 p-2">
+        <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+            <div class="form-group">
+                <label for="exampleInputPassword1">{{'client.password' | translate}}</label> 
+                <input  formControlName="password" type="text" class="form-control mb-2"
+                    name="password" id="exampleInputPassword1" [(ngModel)]="client.password" maxlength="45">
+                <div *ngIf="password.invalid && (password.dirty || password.touched)" class="alert alert-danger">
+                        {{'client.passwordmess' | translate}}
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="nom">{{'client.nom' | translate}}</label> 
+                <input  formControlName="nom" type="text" class="form-control mb-2" name="nom" id="nom"
+                    [(ngModel)]="client.nom" maxlength="45">
+                 <div *ngIf="nom.invalid && (nom.dirty || nom.touched)" class="alert alert-danger">
+                        {{'client.nommess' | translate}}
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="prenom">{{'client.prenom' | translate}}</label> 
+                <input  formControlName="prenom" type="text" class="form-control mb-2" name="prenom"
+                    id="prenom" [(ngModel)]="client.prenom" maxlength="45">
+                <div *ngIf="prenom.invalid && (prenom.dirty || prenom.touched)" class="alert alert-danger">
+                        {{'client.prenommess' | translate}}
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="complement">{{'client.adresse' | translate}}</label> 
+                <input type="text" formControlName="adresse" class="form-control mb-2" name="complement"
+                    id="complement" [(ngModel)]="client.adresse" maxlength="250">
+                <div *ngIf="adresse.invalid && (adresse.dirty || adresse.touched)" class="alert alert-danger">
+                    {{'client.adressemess' | translate}}
+                </div>
+                
+            </div>
+            <div>
+                <input type="hidden" [(ngModel)]="client.version" [ngModelOptions]="{standalone: true}">
+            </div>
+            <div class="button mt-2 d-flex justify-content-end">
+                <button type="submit" [disabled]="!registerForm.valid" class="btn btn-primary">Submit</button>
+            </div>
+        </form>
+    </div>
+ 
+</div>
+<div class="d-flex justify-content-center">
+    <div class="alert alert-primary col-4 " *ngIf="message">
+        {{'client.ok' | translate}}
+    </div>
+</div>
+</div>
