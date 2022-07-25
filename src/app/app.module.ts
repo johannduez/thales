@@ -22,6 +22,8 @@ import { DeconnexionComponent } from './components/deconnexion/deconnexion.compo
 import { PanierComponent } from './components/panier/panier.component';
 import { ArticlesComponent } from './components/articles/articles.component';
 import { ArticleComponent } from './components/article/article.component';
+import { InscriptionComponent } from './components/inscription/inscription.component';
+
 
 
 export function HttpLoaderFactory(http: HttpClient) {
@@ -43,7 +45,8 @@ export function HttpLoaderFactory(http: HttpClient) {
     DeconnexionComponent,
     PanierComponent,
     ArticlesComponent,
-    ArticleComponent
+    ArticleComponent,
+    InscriptionComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,52 @@
+<div class="d-flex flex-column align-items-center">
+    <div class=" authentification centre col-5">
+
+        <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+            <div class="form-group mb-2 pb-2">
+                <label for="id"> {{'client.id' | translate}} </label> 
+                <input formControlName="id" type="number" class="form-control" id="id" placeholder="1" [(ngModel)]="client.id" required/>
+                <div *ngIf="id.invalid && (id.dirty || id.touched )"
+                    class="alert alert-danger">
+                    {{'client.idmess' | translate}}
+                </div>
+            </div>
+            <div class="form-group mb-2 pb-2">
+                <label for="password"> {{'client.password' | translate}} </label> 
+                <input formControlName="password" type="text" class="form-control" id="password" placeholder="12345" [(ngModel)]="client.password" required/>
+                <div *ngIf="password.invalid && (password.dirty || password.touched )"
+                    class="alert alert-danger">
+                    {{'client.passwordmess' | translate}}
+                </div>
+            </div>
+            <div class="form-group mb-2 pb-2">
+                <label for="nom"> {{'client.nom' | translate}} </label> 
+                <input formControlName="nom" type="text" class="form-control" id="nom" placeholder="Dupond" [(ngModel)]="client.nom" required/>
+                <div *ngIf="nom.invalid && (nom.dirty || nom.touched )"
+                    class="alert alert-danger">
+                    {{'client.nommess' | translate}}
+                </div>
+            </div>
+            <div class="form-group mb-2 pb-2">
+                <label for="prenom"> {{'client.prenom' | translate}} </label> 
+                <input formControlName="prenom" type="text" class="form-control" id="prenom" placeholder="Toto" [(ngModel)]="client.prenom" required/>
+                <div *ngIf="prenom.invalid && (prenom.dirty || prenom.touched )"
+                    class="alert alert-danger">
+                    {{'client.prenommess' | translate}}
+                </div>
+            </div>
+            <div class="form-group mb-2 pb-2">
+                <label for="adresse"> {{'client.adresse' | translate}} </label> 
+                <input formControlName="adresse" type="text" class="form-control" id="adresse" placeholder="1 rue de la paix" [(ngModel)]="client.adresse" required/>
+                <div *ngIf="adresse.invalid && (adresse.dirty || adresse.touched )"
+                    class="alert alert-danger">
+                    {{'client.adressemess' | translate}}
+                </div>
+            </div>
+            <div class="form-check authentification d-flex justify-content-end">
+                <button  [disabled]="!registerForm.valid" class="btn btn-primary m-3">{{'client.inscription' | translate}}</button>
+            </div>
+        </form>
+
+        <div class="alert alert-danger" *ngIf="erreurFlag">
+            {{'client.erreurInscription' | translate}}
+        </div>

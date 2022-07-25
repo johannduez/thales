@@ -23,8 +23,8 @@ export class AuthentificationComponent implements OnInit {
     this.registerForm = new FormGroup({
       id: new FormControl(this.client.id, [Validators.required]),
       password: new FormControl(this.client.password, [Validators.required])
-
   });
+
   }
 
   get id() { return this.registerForm.get('id'); }
@@ -32,7 +32,7 @@ export class AuthentificationComponent implements OnInit {
 
   onSubmit() {
 
-    this.service.findbyIdAndPassword2(this.client).subscribe(
+    this.service.findbyIdAndPassword(this.client).subscribe(
       response => {
         console.log(response);
 
