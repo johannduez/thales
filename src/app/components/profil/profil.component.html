@@ -1,0 +1,55 @@
+<div class="page-content page-container mt-5" id="page-content">
+    <div class="padding">
+        <div class=" d-flex justify-content-center ">
+            <div class="col-xl-6 col-md-12">
+                <div class="card user-card-full">
+                    <div class="row m-l-0 m-r-0">
+                        <div class="col-sm-4 bg-c-lite-green user-profile">
+                            <div class="card-block text-center text-white">
+                                <div class="m-b-25">
+                                    <img src="https://img.icons8.com/bubbles/100/000000/user.png" class="img-radius"
+                                        alt="User-Profile-Image">
+                                </div>
+                                <i class=" mdi mdi-square-edit-outline feather icon-edit m-t-10 f-16"></i>
+                            </div>
+                        </div>
+                        <div class="col-sm-8">
+                            <div class="card-block">
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <h2 class="m-b-20 p-b-5 b-b-default f-w-600 m-2 p-2">
+                                        {{'profil.information'|translate}}</h2>
+                                    <a class="btn btn-primary d-flex justify-content-between align-items-center m-2 p-2"
+                                        [routerLink]="'../client'" role="button">
+                                        <img src="assets/img/box-arrow-in-right.svg" class="panier rounded mx-auto d-block" alt="...">
+                                    
+                                    </a>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-6 mb-3">
+                                        <p class="m-b-10 f-w-600">{{'profil.nom'|translate}}</p>
+                                        <h4 class="text-muted f-w-400">
+                                            {{commande.client.nom}}
+                                        </h4>
+                                    </div>
+                                    <div class="col-sm-6 mb-3">
+                                        <p class="m-b-10 f-w-600">Prenom</p>
+                                        <h4 class="text-muted f-w-400">
+                                            {{commande.client.prenom}}
+                                        </h4>
+                                    </div>
+                                    <div class="col-sm-6 mb-3">
+                                        <p class="m-b-10 f-w-600">Adresse</p>
+                                        <h4 class="text-muted f-w-400">
+                                            {{commande.client.adresse}}
+                                        </h4>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

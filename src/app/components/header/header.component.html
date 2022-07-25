@@ -50,23 +50,20 @@
                                 {{'entete.administration'|translate}}
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <!--<c:if test="${empty admininistration}">-->
-                                <a class="dropdown-item" href="/admin/authentification">
+                                <a class="dropdown-item"[routerLink]="['../../admin']" *ngIf="!authentificationAdmin">
                                     {{'entete.connexionadmin'|translate}}</a>
-                                <!-- </c:if>
-                                    <c:if test="${!empty admininistration}">-->
-                                <a class="dropdown-item"  [routerLink]="['../../ajoutarticle']">
+                                <a class="dropdown-item"  [routerLink]="['../../ajoutarticle']"  *ngIf="authentificationAdmin">
                                     {{'entete.ajoutproduit'|translate}}</a>
-                                <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" [routerLink]="['../../articles']">
+                                <div class="dropdown-divider" *ngIf="authentificationAdmin"></div>
+                                <a class="dropdown-item" [routerLink]="['../../articles']"  *ngIf="authentificationAdmin">
                                     {{'entete.produits'|translate}}</a>
-                                <!-- </c:if>-->
+
                             </div>
                         </li>
                     </ul>
                 </div>
                 <div class="text-white ml-5 mr-5" *ngIf="authentification">
-                    {{'entete.bonjour'|translate}} {{prenom()}} {{nom()}}
+                    <a routerLink="/profil" class="text-white">{{'entete.bonjour'|translate}} {{prenom()}} {{nom()}}</a>
                 </div>
                 <div class="ml-3 mr-3">
                     <span class="form-inline">

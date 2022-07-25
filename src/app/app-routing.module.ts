@@ -12,6 +12,9 @@ import { RecapitulatifComponent } from './components/recapitulatif/recapitulatif
 import { ValidercommandeComponent } from './components/validercommande/validercommande.component';
 import { InscriptionComponent } from './components/inscription/inscription.component';
 import { HistoriqueComponent } from './components/historique/historique.component';
+import { AdminComponent } from './components/admin/admin.component';
+import { ProfilComponent } from './components/profil/profil.component';
+import { ClientComponent } from './components/client/client.component';
 
 const routes: Routes = [{path:'magasin',component:MagasinComponent},
 {path:'authentification',component:AuthentificationComponent},
@@ -25,6 +28,9 @@ const routes: Routes = [{path:'magasin',component:MagasinComponent},
 {path:'article/:id',component:ArticleComponent},
 {path:'inscription',component:InscriptionComponent},
 {path:'historique',component:HistoriqueComponent}];
+{path:'admin',component:AdminComponent},
+{path:'profil',component:ProfilComponent},
+{path:'client',component:ClientComponent}];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
