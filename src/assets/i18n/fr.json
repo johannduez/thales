@@ -15,7 +15,9 @@
         "tarifmess":"Le tarif est obligatoire",
         "imagemess":"L'image est obligatoire",
         "categoriemess":"La catégorie est obligatoire",
-        "annuler":"Annuler"
+        "annuler":"Annuler",
+        "modifier":"Modifier",
+        "supprimer":"Supprimer"
 	},
     "magasin":{
         "ordinateur":"Ordinateur",

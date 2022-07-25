@@ -52,7 +52,7 @@
                     </div>
                 </div>
                 <div class="viderPanier">
-                    <input type="button" class="btn btn-primary" (click)="viderpanier()"
+                    <input type="button" [disabled]="commande.lignes.length ==0" class="btn btn-primary" (click)="viderpanier()"
                         name="button" value=" {{'panier.viderpanier'|translate}}" />
                 </div>
             </form>
@@ -97,6 +97,6 @@
     </div>
 
      <div class="validerPanier">
-        <input type="button" class="btn btn-primary" name="button"
+        <input type="button" class="btn btn-primary" name="button" [disabled]="commande.lignes.length ==0"
             value=" {{'panier.validerpanier'|translate}}" (click)="recapitulatif()"/>
     </div>

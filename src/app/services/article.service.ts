@@ -29,17 +29,9 @@ export class ArticleService {
         console.log("crud service post KO")
       });
   }
-  getAll(): Article[] {
-     let Mylist:Article[] = [];
-    this.httpClient.get<Article[]>(this.apiServer+"/findall").subscribe(
-      reponse=>{Mylist=reponse;},
-      err=>{console.log("***********Ko");}
-    ); 
-    return Mylist;
-
-  }
-  getAll2(): Observable<Article[]> {
-    return this.httpClient.get<Article[]>(this.apiServer + '/findall');
+  
+  getAll(): Observable<Article[]> {
+    return this.httpClient.get<Article[]>(this.apiServer);
   }
   findbyorderbytarifasc(): Observable<Article[]>{
     return this.httpClient.get<Article[]>(this.apiServer + '/findbyorderbytarifasc');
@@ -50,7 +42,17 @@ export class ArticleService {
     return this.httpClient.get<Article[]>
     (this.apiServer + '/findfiltretotal/'+tel+'/'+ordi+'/'+elec+'/'+prixMax+'/'+prixMin+'/'+leNom);
   }
-
+  getById(id): Observable<Article> {
+    return this.httpClient.get<Article>(this.apiServer + '/' + id);
+    
+  }
+  update( article): Observable<Article> {
+   return this.httpClient.put<Article>(this.apiServer , JSON.stringify(article), this.httpOptions);
+    
+  }
+    delete(id){
+    return this.httpClient.delete<Article>(this.apiServer + '/' + id, this.httpOptions);
+  }
 
 
 

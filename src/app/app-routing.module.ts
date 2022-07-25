@@ -2,6 +2,8 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AccueilComponent } from './components/accueil/accueil.component';
 import { AjoutarticleComponent } from './components/ajoutarticle/ajoutarticle.component';
+import { ArticleComponent } from './components/article/article.component';
+import { ArticlesComponent } from './components/articles/articles.component';
 import { AuthentificationComponent } from './components/authentification/authentification.component';
 import { DeconnexionComponent } from './components/deconnexion/deconnexion.component';
 import { MagasinComponent } from './components/magasin/magasin.component';
@@ -16,7 +18,9 @@ const routes: Routes = [{path:'magasin',component:MagasinComponent},
 {path:'ajoutarticle',component:AjoutarticleComponent},
 {path:'accueil',component:AccueilComponent},
 {path:'deconnexion',component:DeconnexionComponent},
-{path:'panier',component:PanierComponent}];
+{path:'panier',component:PanierComponent},
+{path:'articles',component:ArticlesComponent},
+{path:'article/:id',component:ArticleComponent}];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

@@ -1,0 +1,46 @@
+<div class="commandes m-5">
+    <table class="table table-striped table-bordered col-11">
+        <tr>
+            <th>
+                {{'article.identifiant'|translate}}
+            </th>
+            <th>
+                {{'article.nom'|translate}}
+            </th>
+            <th>
+                {{'article.description'|translate}}
+            </th>
+            <th>
+                {{'article.tarif'|translate}}
+            </th>
+            <th>
+                {{'article.categorie'|translate}}
+             </th>
+            <th>
+                {{'article.image'|translate}}
+            </th>
+        </tr>
+
+            <tr *ngFor="let article of articles"> 
+                <td><a routerLink="/article/{{article.id}}">
+                    {{article.id}}</a>
+                </td>
+                <td>
+                    {{article.nom }}
+                </td>
+                <td>
+                    {{article.description }}
+                </td>
+                <td>
+                    {{article.tarif}}
+                </td>
+                <td>
+                    {{article.categorie }}
+                </td>
+                <td><img [src]="article.image"
+                    class="rounded mx-auto d-block" alt="..."></td>
+            </tr>
+
+
+    </table>
+</div>

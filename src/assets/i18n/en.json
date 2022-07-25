@@ -15,7 +15,9 @@
         "tarifmess":"The price is required",
         "imagemess":"Image is required",
         "categoriemess":"Category is required",
-        "annuler":"Cancel"
+        "annuler":"Cancel",
+        "modifier":"Update",
+        "supprimer":"Delete"
 	},
     "magasin":{
         "ordinateur":"Computer",

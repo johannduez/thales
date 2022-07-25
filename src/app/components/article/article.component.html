@@ -1,0 +1,90 @@
+<div class="d-flex flex-column align-items-center mt-4">
+    <div class="col-4 authentification">
+        <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+            <div class="form-group mb-2 pb-2">
+                <label>
+                    {{'article.nom' | translate}}
+                </label>
+                <input formControlName="nom" type="text" class="form-control"
+                    placeholder="{{'article.nom' | translate}}" maxlength="45" [(ngModel)]="article.nom" required />
+                <div *ngIf="nom.invalid && (nom.dirty || nom.touched )" class="alert alert-danger">
+                    {{'article.nommess' | translate}}
+                </div>
+
+            </div>
+
+            <div class="form-group mb-2 pb-2">
+                <label>
+                    {{'article.description' | translate}}
+                </label>
+                <input formControlName="description" type="text" class="form-control"
+                    placeholder=" {{'article.description' | translate}}" maxlength="250"
+                    [(ngModel)]="article.description" />
+                <div *ngIf="description.invalid && (description.dirty || description.touched)"
+                    class="alert alert-danger">
+                    {{'article.descriptionmess' | translate}}
+                </div>
+            </div>
+            <div class="form-group mb-2 pb-2">
+                <label>
+                    {{'article.tarif' | translate}}
+                </label>
+                <input formControlName="tarif" [(ngModel)]="article.tarif" type="number" class="form-control"
+                    placeholder="{{'article.tarif' | translate}}" maxlength="45" />
+                <div *ngIf="tarif.invalid && (tarif.dirty || tarif.touched)" class="alert alert-danger">
+                    {{'article.tarifmess' | translate}}
+                </div>
+            </div>
+            <div class="form-group mb-2 pb-2">
+                <label>
+                    {{'article.image' | translate}}
+                </label>
+                <div class="m-2">
+                    <img [src]="article.image" class="rounded mx-auto d-block" alt="...">
+                </div>
+                <input formControlName="image" type="text" class="form-control"
+                    placeholder=" {{'article.image' | translate}}" maxlength="250" [(ngModel)]="article.image" />
+                <div *ngIf="image.invalid && (image.dirty || image.touched)" class="alert alert-danger">
+                    {{'article.imagemess' | translate}}
+                </div>
+            </div>
+
+
+            <div class="form-group mb-2 pb-2">
+                <label>
+                    {{'article.categorie' | translate}}
+
+                </label>
+                <select formControlName="categorie" [(ngModel)]="article.categorie" class="form-control"
+                    aria-label="Default select example">
+                    <option value="">{{'article.categorie' | translate}}</option>
+                    <option value="Téléphone">
+                        {{'article.telephone' | translate}}
+                    </option>
+                    <option value="Ordinateur">
+                        {{'article.ordinateur' | translate}}
+                    </option>
+                    <option value="Electroménager">
+                        {{'article.electromenager' | translate}}
+                    </option>
+                </select>
+                <div>
+                    <input type="hidden"  [(ngModel)]="article.version"  [ngModelOptions]="{standalone: true}">
+                </div>
+                <div *ngIf="categorie.invalid && (categorie.dirty || categorie.touched)" class="alert alert-danger">
+                    {{'article.categoriemess' | translate}}
+                </div>
+            </div>
+            <div class="text-center">
+                <button [disabled]="!registerForm.valid" class="btn btn-primary m-3">{{'article.modifier' |
+                    translate}}</button>
+                <button class="btn btn-primary" type="reset" (click)="supprimer()">{{'article.supprimer' |
+                    translate}}</button>
+            </div>
+
+        </form>
+
+    </div>
+
+</div>
+
