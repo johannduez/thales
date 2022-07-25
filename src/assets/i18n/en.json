@@ -77,6 +77,23 @@
         "politique":"Privacy Policy",
         "plan":"Sitemap",
         "centre":"Shopping center vert bocage 289 av.Wertheim 13300 Salon de Provence"
+    },
+    "client":{
+        "id": "Identifier",
+        "password": "Password",
+        "nom": "Lastname",
+        "prenom": "Firstname",
+        "adresse": "Address",
+        "idmess": "Identifier required",
+        "passwordmess": "Password required",
+        "nommess": "Lastname required",
+        "prenommess": "Firstname required",
+        "adressemess": "Address required",
+        "connexion": "Login",
+        "erreur": "Identifier or Password incorrect",
+        "inscription": "Registration",
+        "erreurInscription": "Please choose another identifier"
+        
     }
 
 }

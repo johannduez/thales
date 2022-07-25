@@ -24,7 +24,7 @@
                             </a>
                         </li>
                          <li class="nav-item" *ngIf="!authentification">
-                            <a class="nav-link text-white" href="/client/inscription">
+                            <a class="nav-link text-white" [routerLink]="['../../inscription']">
                                 {{'entete.inscription'|translate}}</a>
                         </li>
                         <li class="nav-item" *ngIf="!authentification">

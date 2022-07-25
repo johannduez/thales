@@ -20,6 +20,7 @@ import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { AccueilComponent } from './components/accueil/accueil.component';
 import { DeconnexionComponent } from './components/deconnexion/deconnexion.component';
 import { PanierComponent } from './components/panier/panier.component';
+import { InscriptionComponent } from './components/inscription/inscription.component';
 
 
 export function HttpLoaderFactory(http: HttpClient) {
@@ -39,7 +40,8 @@ export function HttpLoaderFactory(http: HttpClient) {
     AjoutarticleComponent,
     AccueilComponent,
     DeconnexionComponent,
-    PanierComponent
+    PanierComponent,
+    InscriptionComponent
   ],
   imports: [
     BrowserModule,

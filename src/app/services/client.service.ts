@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Client } from '../classes/client';
 
 @Injectable({
@@ -9,23 +9,26 @@ export class ClientService {
 
   constructor(private http: HttpClient) { }
 
+
   findbyIdAndPassword(client: Client){
-
-    this.http.get<Client>("http://localhost:8080/commerce/client/"+ client.id + "/" + client.password).subscribe(
-      response => {
-        console.log(response);
-        sessionStorage.setItem("client",JSON.stringify(response));
-      },
-      err => {
-          console.log("***** Erreur *****");
-      }
-    );
-
-  }
-
-  findbyIdAndPassword2(client: Client){
     
     return this.http.get<Client>("http://localhost:8080/commerce/client/"+ client.id + "/" + client.password);
 
   }
+
+  create(client: Client){
+    const body = JSON.stringify(client);
+    return this.http.post("http://localhost:8080/commerce/client", body,{
+      headers: new HttpHeaders({
+        "Content-Type": "application/json"
+      })
+    })
+
+  }
+
+  findbyId(id: number){
+    return this.http.get<Client>("http://localhost:8080/commerce/client/" + id);
+    
+  }
+
 }

@@ -90,7 +90,9 @@
         "prenommess": "Prenom obligatoire",
         "adressemess": "Adresse obligatoire",
         "connexion": "Connexion",
-        "erreur": "Identifiant ou mot de passe incorrecte"
+        "erreur": "Identifiant ou mot de passe incorrecte",
+        "inscription": "Inscription",
+        "erreurInscription": "Veuillez choisir un autre identifiant"
         
     }
 }
