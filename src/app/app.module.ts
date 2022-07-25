@@ -23,6 +23,7 @@ import { PanierComponent } from './components/panier/panier.component';
 import { ArticlesComponent } from './components/articles/articles.component';
 import { ArticleComponent } from './components/article/article.component';
 import { InscriptionComponent } from './components/inscription/inscription.component';
+import { HistoriqueComponent } from './components/historique/historique.component';
 
 
 
@@ -46,7 +47,8 @@ export function HttpLoaderFactory(http: HttpClient) {
     PanierComponent,
     ArticlesComponent,
     ArticleComponent,
-    InscriptionComponent
+    InscriptionComponent,
+    HistoriqueComponent
   ],
   imports: [
     BrowserModule,

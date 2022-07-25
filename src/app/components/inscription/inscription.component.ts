@@ -14,6 +14,7 @@ export class InscriptionComponent implements OnInit {
   registerForm: FormGroup;
   client: Client = new Client();
   erreurFlag: boolean = false;
+  erreurIdFlag: boolean = false;
 
   constructor(private router: Router, private service: ClientService) { }
 
@@ -40,14 +41,17 @@ export class InscriptionComponent implements OnInit {
         this.erreurFlag = true;
       },
       err => {
-
-        this.service.create(this.client).subscribe(
-          response => {
-            this.router.navigate(['/authentification']);
-          },
-          err => {
-            this.erreurFlag = true;
-          }); 
+        if(this.client.id>0){
+          this.service.create(this.client).subscribe(
+            response => {
+              this.router.navigate(['/authentification']);
+            },
+            err => {
+              this.erreurFlag = true;
+            }); 
+        } else {
+          this.erreurIdFlag = true;
+        }
 
       });
 

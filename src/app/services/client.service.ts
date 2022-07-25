@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Client } from '../classes/client';
+import { Commande } from '../classes/commande';
 
 @Injectable({
   providedIn: 'root'
@@ -28,7 +29,11 @@ export class ClientService {
 
   findbyId(id: number){
     return this.http.get<Client>("http://localhost:8080/commerce/client/" + id);
-    
+
+  }
+
+  findCommandeByClient(id: number){
+    return this.http.get<Array<Commande>>("http://localhost:8080/commerce/commande/findbyclient/" + id);
   }
 
 }

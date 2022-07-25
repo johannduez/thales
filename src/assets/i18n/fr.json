@@ -34,8 +34,9 @@
         "produit":"Nos produits",
         "inscription":"Inscription",
         "authentification":"Authentification",
-         "choix":"Choix des articles",
+        "choix":"Choix des articles",
         "commandes":"Commandes",
+        "historique":"Historique des commandes",
         "deconnexion":"Déconnexion",
         "connexionadmin":"Se connecter en tant qu'administrateur",
         "ajoutproduit":"Ajouter un produit",
@@ -94,7 +95,8 @@
         "connexion": "Connexion",
         "erreur": "Identifiant ou mot de passe incorrecte",
         "inscription": "Inscription",
-        "erreurInscription": "Veuillez choisir un autre identifiant"
+        "erreurInscription": "Veuillez choisir un autre identifiant",
+        "erreurIdFlag": "Veuillez choisir un identifiant positif"
         
     }
 }

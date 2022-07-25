@@ -36,6 +36,10 @@
                                 {{'entete.choix'|translate}}</a>
                         </li>
                         <li class="nav-item" *ngIf="authentification">
+                            <a class="nav-link text-white" [routerLink]="['../../historique']">
+                                {{'entete.historique'|translate}}</a>
+                        </li>
+                        <li class="nav-item" *ngIf="authentification">
                             <a class="nav-link text-white" [routerLink]="['../../deconnexion']">
                                 {{'entete.deconnexion'|translate}}</a>
                         </li>

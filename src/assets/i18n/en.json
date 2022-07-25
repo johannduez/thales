@@ -36,6 +36,7 @@
         "authentification":"Log in",
          "choix":"Choice of items",
         "commandes":"Orders",
+        "historique":"Order history",
         "deconnexion":"Disconnect",
         "connexionadmin":"Log in as an administrator",
         "ajoutproduit":"Add a product",
@@ -94,7 +95,8 @@
         "connexion": "Login",
         "erreur": "Identifier or Password incorrect",
         "inscription": "Registration",
-        "erreurInscription": "Please choose another identifier"
+        "erreurInscription": "Please choose another identifier",
+        "erreurIdFlag": "Please choose a positive identifier"
         
     }
 
