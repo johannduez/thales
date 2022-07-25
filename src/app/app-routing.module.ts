@@ -11,6 +11,7 @@ import { PanierComponent } from './components/panier/panier.component';
 import { RecapitulatifComponent } from './components/recapitulatif/recapitulatif.component';
 import { ValidercommandeComponent } from './components/validercommande/validercommande.component';
 import { InscriptionComponent } from './components/inscription/inscription.component';
+import { AdminComponent } from './components/admin/admin.component';
 
 const routes: Routes = [{path:'magasin',component:MagasinComponent},
 {path:'authentification',component:AuthentificationComponent},
@@ -22,7 +23,8 @@ const routes: Routes = [{path:'magasin',component:MagasinComponent},
 {path:'panier',component:PanierComponent},
 {path:'articles',component:ArticlesComponent},
 {path:'article/:id',component:ArticleComponent},
-{path:'inscription',component:InscriptionComponent}];
+{path:'inscription',component:InscriptionComponent},
+{path:'admin',component:AdminComponent}];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

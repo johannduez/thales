@@ -14,6 +14,7 @@ export class DeconnexionComponent implements OnInit {
   ngOnInit(): void {
     sessionStorage.clear();
     this.auth.isLoggedIn=false;
+     this.auth.isLoggedAdmin=false;
     this.router.navigate(['/accueil']);
   }
 

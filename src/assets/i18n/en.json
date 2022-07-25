@@ -96,6 +96,14 @@
         "inscription": "Registration",
         "erreurInscription": "Please choose another identifier"
         
+    },
+    "admin":{
+        "login": "Identifier",
+        "password": "Password",
+         "erreur": "Identifier or Password incorrect",
+         "idmess": "Identifier required",
+        "passwordmess": "Password required",
+        "actif":"Account not active."
     }
 
 }

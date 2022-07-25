@@ -32,6 +32,9 @@ export class HeaderComponent implements OnInit {
   get authentification():boolean {
     return this.auth.isLoggedIn;
   }
+  get authentificationAdmin():boolean {
+    return this.auth.isLoggedAdmin;
+  }
   nom():string{
     return this.auth.nom;
   }

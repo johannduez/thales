@@ -96,5 +96,13 @@
         "inscription": "Inscription",
         "erreurInscription": "Veuillez choisir un autre identifiant"
         
+    },
+    "admin":{
+        "login": "Identifiant",
+        "password": "Mot de passe",
+         "erreur": "Identifiant ou mot de passe incorrecte",
+        "idmess": "Identifiant obligatoire",
+        "passwordmess": "Mot de passe obligatoire",
+        "actif": "Compte non actif."
     }
 }

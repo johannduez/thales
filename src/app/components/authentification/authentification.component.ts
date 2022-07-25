@@ -14,7 +14,6 @@ import { ClientService } from 'src/app/services/client.service';
 export class AuthentificationComponent implements OnInit {
   registerForm: FormGroup;
   client: Client = new Client();
-  clientTest: Client = new Client();
   erreurFlag: boolean = false;
 
   constructor(private router:Router,private auth:AuthService, private formBuilder: FormBuilder, private service: ClientService) { }
@@ -31,7 +30,7 @@ export class AuthentificationComponent implements OnInit {
   get password() { return this.registerForm.get('password'); }
 
   onSubmit() {
-
+    this.erreurFlag = false;
     this.service.findbyIdAndPassword(this.client).subscribe(
       response => {
         console.log(response);
