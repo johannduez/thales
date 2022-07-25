@@ -79,5 +79,20 @@
         "politique":"Politique de confidentialité",
         "plan":"Plan du site",
         "centre":"Centre commercial vert bocage 289 av.Wertheim 13300 Salon de Provence"
+    },
+    "client":{
+        "id": "Identifiant",
+        "password": "Mot de passe",
+        "nom": "Nom",
+        "prenom": "Prenom",
+        "adresse": "Adresse",
+        "idmess": "Identifiant obligatoire",
+        "passwordmess": "Mot de passe obligatoire",
+        "nommess": "Nom obligatoire",
+        "prenommess": "Prenom obligatoire",
+        "adressemess": "Adresse obligatoire",
+        "connexion": "Connexion",
+        "erreur": "Identifiant ou mot de passe incorrecte"
+        
     }
 }
