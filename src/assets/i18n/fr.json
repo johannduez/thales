@@ -61,7 +61,8 @@
         "viderpanier":"Vider le panier",
         "validerpanier":"Valider le panier",
         "retourpanier":"Retour au panier",
-        "valider":"Valider la commande"
+        "valider":"Valider la commande",
+        "supprimer":"Supprimer"
     },
     "valider":{
         "felicitation":"Félicitation",

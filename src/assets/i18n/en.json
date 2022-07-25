@@ -61,7 +61,8 @@
         "viderpanier":"Emptying your shopping cart",
         "validerpanier":"Validate the shopping cart",
         "retourpanier":"Return to the shopping cart",
-        "valider":"Validate your order"
+        "valider":"Validate your order",
+        "supprimer":"Delete"
     },
     "valider":{
         "felicitation":"Congratulations",

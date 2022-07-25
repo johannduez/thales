@@ -5,6 +5,7 @@ import { AjoutarticleComponent } from './components/ajoutarticle/ajoutarticle.co
 import { AuthentificationComponent } from './components/authentification/authentification.component';
 import { DeconnexionComponent } from './components/deconnexion/deconnexion.component';
 import { MagasinComponent } from './components/magasin/magasin.component';
+import { PanierComponent } from './components/panier/panier.component';
 import { RecapitulatifComponent } from './components/recapitulatif/recapitulatif.component';
 import { ValidercommandeComponent } from './components/validercommande/validercommande.component';
 
@@ -14,7 +15,8 @@ const routes: Routes = [{path:'magasin',component:MagasinComponent},
 {path:'validercommande',component:ValidercommandeComponent},
 {path:'ajoutarticle',component:AjoutarticleComponent},
 {path:'accueil',component:AccueilComponent},
-{path:'deconnexion',component:DeconnexionComponent}];
+{path:'deconnexion',component:DeconnexionComponent},
+{path:'panier',component:PanierComponent}];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

@@ -30,4 +30,7 @@ export class RecapitulatifComponent implements OnInit {
 
     this.router.navigate(['/validercommande']);
   }
+  retourpanier(){
+    this.router.navigate(['/panier']);
+  }
 }
