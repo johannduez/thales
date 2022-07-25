@@ -3,7 +3,7 @@
     <thead class="thead-dark">
       <tr>
         <th scope="col">Date</th> 
-        <th scope="col">Id article</th>
+        <th scope="col">Article</th>
         <th scope="col">Quantite</th>
         <th scope="col">Prix</th>
       </tr>
@@ -17,7 +17,7 @@
                 <ng-container *ngFor="let lignes of list.lignes; let isFirst = first;">
                     <tr>
                         <td></td>
-                        <td>{{lignes.id}}</td>
+                        <td>{{lignes.article.nom}}</td>
                         <td>{{lignes.quantite}}</td>
                         <td>{{lignes.prix}}</td>
                     </tr>

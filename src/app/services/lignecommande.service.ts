@@ -31,4 +31,8 @@ export class LignecommandeService {
     return this.httpClient.post<LigneCommande>(this.apiServer , JSON.stringify(product, getCircularReplacer()), this.httpOptions);
     
   }
+   getById(id): Observable<LigneCommande> {
+    return this.httpClient.get<LigneCommande>(this.apiServer + '/' + id);
+    
+  }
 }
