@@ -5,6 +5,7 @@ import { Article } from 'src/app/classes/article';
 import { Commande } from 'src/app/classes/commande';
 import { LigneCommande } from 'src/app/classes/ligne-commande';
 import { ArticleService } from 'src/app/services/article.service';
+import { CommandeService } from 'src/app/services/commande.service';
 import { DialogComponent } from '../dialog/dialog.component';
 
 @Component({
@@ -26,7 +27,7 @@ articlesBase2:Article[]=[];
   fPMax:number=10000;
   commande:Commande=new Commande();
   constructor(private srv : ArticleService,private http:HttpClient,
-    private dialog: MatDialog) { 
+    private dialog: MatDialog,private commerceSrv : CommandeService) { 
 /* this.http.get("http://localhost:8080/commerce/article/findall").subscribe(
       reponse=>{this.Mylist=reponse;},
       err=>{console.log("***********Ko");}
@@ -128,41 +129,14 @@ for (let index = 0; index < this.articlesBase2.length; index++) {
   }
 
   ajouter(art:Article){
-  
     let quantite:number=1;
-    let trouv:Boolean=false;
-    for (let ligne of this.commande.lignes) {
-      if(ligne.article.id == art.id){
-         trouv=true;
-         ligne.prix+= quantite*art.tarif;
-          ligne.quantite+=quantite;
-      }
-    }
-    if(!trouv){
-       let ligneCommande:LigneCommande=new LigneCommande();
-       ligneCommande.article=art;
-        ligneCommande.prix=quantite*art.tarif;
-        ligneCommande.quantite=quantite;
-            this.commande.lignes.push(ligneCommande);
-    }
-    this.commande.prixTotal+=quantite*art.tarif;
-        
-    let str:string=JSON.stringify(this.commande);
-    sessionStorage.setItem("commande",str);
+    this.commerceSrv.ajouterLigne(this.commande,art,quantite);
+    this.commerceSrv.sauvegarde(this.commande);
 
 
     const dialogConfig = new MatDialogConfig();
     this.dialog.open(DialogComponent, dialogConfig);
  
-  /*  dialogRef.afterClosed().subscribe(result => {
-      //NOTE: The result can also be nothing if the user presses the `esc` key or clicks outside the dialog
-      if (result == 'confirm') {
-        console.log('Unregistered');
-      }
-    })*/
-
-
-   /* this.commande.ajouterLigne(art,quantite);*/
      
   }
 }

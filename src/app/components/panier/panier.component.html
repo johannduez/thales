@@ -1,0 +1,102 @@
+<div class=".container">
+    <div class="articles">
+        <h1>
+            {{'panier.titre1'|translate}}
+        </h1>
+    </div>
+    <div class="articles">
+        <h3>
+            {{'panier.titre20'|translate}}
+            {{commande.client.prenom }}
+            {{commande.client.nom }}
+            {{'panier.titre21'|translate}}
+            {{commande.prixTotal }}
+            {{'panier.titre22'|translate}}
+
+        </h3>
+    </div>
+    <div class="ligne">
+        <div class="col-5 mx-2">
+            <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+                <div class="ligne">
+                    <div class="col-2">
+                        <label for="idArticle col-2 lignepadding">
+                            {{'panier.article'|translate}}
+                        </label>
+                    </div>
+                    <div class="col-10">
+                        <select formControlName="idarticle" class="form-select col-8 lignepadding" aria-label="Default select example"
+                            id="idArticle" name="article.id" [(ngModel)]="idarticle">
+                                <option *ngFor="let art of articles" [value]="art.id">{{art.nom}} / {{art.tarif}} €
+                                </option>
+                       </select>
+                    </div>
+                </div>
+                <div class="ligne mt-3">
+                    <div class="ligne col-8">
+                        <div class="col-5">
+                            <label for="quantite" class=" col-12">
+                                {{'panier.quantite'|translate}}
+                              </label>
+                        </div>
+                        <div class="col-5">
+                            <input type="number" formControlName="quantite" class=" form-control col-12" id="quantite" name="quantite"
+                                aria-describedby="emailHelp"  min="1" [(ngModel)]="quantite">
+                        </div>
+                        
+                    </div>
+                    <div class="col-3">
+                        <button type="submit" [disabled]="!registerForm.valid" class="btn btn-primary">
+                            {{'panier.ajouter'|translate}}
+                        </button>
+                    </div>
+                </div>
+                <div class="viderPanier">
+                    <input type="button" class="btn btn-primary" (click)="viderpanier()"
+                        name="button" value=" {{'panier.viderpanier'|translate}}" />
+                </div>
+            </form>
+
+        </div>
+        <div class="col-6 mx-2">
+            <table class="table table-striped table-bordered ">
+                <tr>
+                    <th>
+                        {{'panier.articles'|translate}}
+                    </th>
+                    <th>
+                        {{'panier.quantite2'|translate}}
+                    </th>
+                    <th>
+                        {{'panier.prixtotal'|translate}}
+                    </th>
+                    <th>
+                    </th>
+                </tr>
+                     <tr *ngFor="let ligne of commande.lignes">
+                        <td>
+                            {{ligne.article.nom }}
+                        </td>
+                        <td>
+                            {{ligne.quantite }}
+                        </td>
+                        <td>
+                            {{ligne.prix }}
+                        </td>
+                        <td>
+                            <button class="btn-primary btn bg-primary btn-sm" (click)="supprimer(ligne)">
+                                {{'panier.supprimer'|translate}}
+                            
+                            </button>
+                        </td>
+                    </tr>
+
+
+            </table>
+        </div>
+    </div>
+
+     <div class="validerPanier">
+        <input type="button" class="btn btn-primary" name="button"
+            value=" {{'panier.validerpanier'|translate}}" (click)="recapitulatif()"/>
+    </div>

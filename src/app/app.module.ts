@@ -19,6 +19,7 @@ import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { AccueilComponent } from './components/accueil/accueil.component';
 import { DeconnexionComponent } from './components/deconnexion/deconnexion.component';
+import { PanierComponent } from './components/panier/panier.component';
 
 
 export function HttpLoaderFactory(http: HttpClient) {
@@ -37,7 +38,8 @@ export function HttpLoaderFactory(http: HttpClient) {
     ValidercommandeComponent,
     AjoutarticleComponent,
     AccueilComponent,
-    DeconnexionComponent
+    DeconnexionComponent,
+    PanierComponent
   ],
   imports: [
     BrowserModule,

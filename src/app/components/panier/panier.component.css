@@ -1,0 +1,30 @@
+.articles {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.selection {
+    margin-left: 2%;
+    margin-top: 2%;
+}
+
+.ligne {
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+}
+
+
+
+.viderPanier {
+    margin-top: 3%;
+}
+
+.validerPanier {
+    margin-top: 3%;
+    margin-left: 3%;
+    margin-right: 3%;
+    display: flex;
+    justify-content: flex-end;
+}
