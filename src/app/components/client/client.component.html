@@ -4,10 +4,18 @@
         <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
             <div class="form-group">
                 <label for="exampleInputPassword1">{{'client.password' | translate}}</label> 
-                <input  formControlName="password" type="text" class="form-control mb-2"
+                <input  formControlName="password" type="password" class="form-control mb-2"
                     name="password" id="exampleInputPassword1" [(ngModel)]="client.password" maxlength="45">
                 <div *ngIf="password.invalid && (password.dirty || password.touched)" class="alert alert-danger">
                         {{'client.passwordmess' | translate}}
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="exampleInputPassword2">{{'client.passwordConfirmation' | translate}}</label> 
+                <input  formControlName="passwordConfirmation" type="password" class="form-control mb-2"
+                    name="passwordConfirmation" id="exampleInputPassword2" [(ngModel)]="passwordConfirmation" maxlength="45">
+                <div *ngIf="passwordC.invalid && (passwordC.dirty || passwordC.touched)" class="alert alert-danger">
+                        {{'client.passwordConfirmationmess' | translate}}
                 </div>
             </div>
             <div class="form-group">
@@ -46,8 +54,8 @@
  
 </div>
 <div class="d-flex justify-content-center">
-    <div class="alert alert-primary col-4 " *ngIf="message">
-        {{'client.ok' | translate}}
+    <div class="alert alert-danger" *ngIf="erreurPasswordCFlag">
+        {{'client.erreurPasswordCFlag' | translate}}
     </div>
 </div>
 </div>

@@ -3,6 +3,8 @@ import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms'
 import { Client } from 'src/app/classes/client';
 import { Commande } from 'src/app/classes/commande';
 import { ClientService } from 'src/app/services/client.service';
+import { AuthService } from 'src/app/services/auth.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-client',
@@ -14,7 +16,11 @@ export class ClientComponent implements OnInit {
   commande:Commande=new Commande();
   registerForm: FormGroup;
   message:boolean=false;
-  constructor(private formBuilder: FormBuilder, private service: ClientService) { }
+  passwordConfirmation: string;
+  erreurPasswordCFlag: boolean = false;
+  constructor(private formBuilder: FormBuilder, private service: ClientService, private auth: AuthService, private router: Router) { }
+
+  
 
   ngOnInit(): void {
     console.log("ClientComponent");
@@ -26,7 +32,8 @@ export class ClientComponent implements OnInit {
       nom: new FormControl(this.client.nom, [Validators.required]),
       prenom: new FormControl(this.client.prenom, [Validators.required]),
       adresse: new FormControl(this.client.adresse, [Validators.required]),
-      password: new FormControl(this.client.password, [Validators.required])
+      password: new FormControl(this.client.password, [Validators.required]),
+      passwordConfirmation: new FormControl(this.passwordConfirmation, [Validators.required])
   });
   }
 
@@ -34,16 +41,27 @@ export class ClientComponent implements OnInit {
   get prenom() { return this.registerForm.get('prenom'); }
   get adresse() { return this.registerForm.get('adresse'); }
   get password() { return this.registerForm.get('password'); }
+  get passwordC() { return this.registerForm.get('passwordConfirmation'); }
+
   onSubmit(){
-    this.message=false;
-     if (this.registerForm.invalid) {
+
+    if(this.client.password != this.passwordConfirmation)
+      this.erreurPasswordCFlag = true;
+    else 
+      this.erreurPasswordCFlag = false;
+
+     if (this.registerForm.invalid || this.erreurPasswordCFlag == true) {
             return;
         }
     
         this.service.update(this.client).subscribe(
               response => {
                 this.client=response;
-                this.message=true;});
+                this.commande.client = this.client;
+                sessionStorage.setItem("commande",JSON.stringify(this.commande));
+                this.auth.setUser();
+                this.router.navigate(['/profil']);
+              });
              
   }
 }
