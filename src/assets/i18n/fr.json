@@ -100,7 +100,12 @@
         "erreurInscription": "Veuillez choisir un autre identifiant",
         "erreurIdFlag": "Veuillez choisir un identifiant positif",
         "ok":"Profil modifié",
-        "souvenir": "Se souvenir de moi"
+        "souvenir": "Se souvenir de moi",
+        "passwordConfirmation": "Confirmation du mot de passe",
+        "passwordConfirmationmess": "Confirmation du mot de passe obligatoire",
+        "erreurPasswordCFlag": "Le mot de passe et le mot de passe de confirmation sont différents"
+        
+
     },
     "admin":{
         "login": "Identifiant",
