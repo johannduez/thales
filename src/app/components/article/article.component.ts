@@ -63,7 +63,8 @@ export class ArticleComponent implements OnInit {
     uploadImageData.append('nom',this.article.nom);
     uploadImageData.append('tarif',this.article.tarif.toString());
     uploadImageData.append('version',this.article.version.toString());
-    uploadImageData.append('picByte',this.article.picByte);
+
+    
    
     this.artSrv.update(uploadImageData).subscribe(
       response=>{
