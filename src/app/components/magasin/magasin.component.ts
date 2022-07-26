@@ -16,8 +16,7 @@ import { DialogComponent } from '../dialog/dialog.component';
 })
 export class MagasinComponent implements OnInit {
   articles:Array<Article> = new Array<Article>();
-  articlesBase:Array<Article> = new Array<Article>();
-articlesBase2:Article[]=[];
+  articlesBase2:Article[]=[];
   hideme=[];
   pages: number = 1;
   cOrdi:number=1;
@@ -33,11 +32,17 @@ articlesBase2:Article[]=[];
 
   ngOnInit(): void {
     this.srv.findbyorderbytarifasc().subscribe((data: Article[])=>{
-      this.articlesBase2 = data;
+     /* this.articlesBase2 = data;
       for(let art of this.articlesBase2){
          art.retrievedImage = this.domSanitizer.bypassSecurityTrustUrl('data:image/jepg;base64,' + art.picByte);
-      }
+      }*/
+      sessionStorage.setItem("test",JSON.stringify(data));
     });
+    this.articlesBase2=JSON.parse( sessionStorage.getItem("test"));
+    for(let art of this.articlesBase2){
+         art.retrievedImage = this.domSanitizer.bypassSecurityTrustUrl('data:image/jepg;base64,' + art.picByte);
+        this.articles.push(art);
+    }
     this.commande=JSON.parse(sessionStorage.getItem("commande"));
   }
   filtrePrix(article:Article){
@@ -68,7 +73,7 @@ articlesBase2:Article[]=[];
   }
 
   filtre(){
-    let fordi:string="0";
+    /*let fordi:string="0";
     if(this.cOrdi==1)fordi="1";
     let ftel:string="0";
     if(this.cTel==1)ftel="1";
@@ -79,7 +84,15 @@ articlesBase2:Article[]=[];
       for(let art of this.articlesBase2){
          art.retrievedImage = this.domSanitizer.bypassSecurityTrustUrl('data:image/jepg;base64,' + art.picByte);
       }
-    });
+    });*/
+    this.articles = new Array<Article>();
+    for(let art of this.articlesBase2){
+      if(this.filtreCombo(art) && this.filtreNom(art) && this.filtrePrix(art)){
+        this.articles.push(art);
+      }
+    }
+
+
   }
 
   ajouter(art:Article){
