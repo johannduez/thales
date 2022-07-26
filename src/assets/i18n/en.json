@@ -68,7 +68,6 @@
         "valider":"Validate your order",
         "supprimer":"Delete",
         "date":"Date"
-        
     },
     "valider":{
         "felicitation":"Congratulations",
@@ -82,7 +81,8 @@
         "mention":"Legal Notice",
         "politique":"Privacy Policy",
         "plan":"Sitemap",
-        "centre":"Shopping center vert bocage 289 av.Wertheim 13300 Salon de Provence"
+        "centre":"Shopping center vert bocage 289 av.Wertheim 13300 Salon de Provence",
+        "communaute": "Our community"
     },
     "client":{
         "id": "Identifier",
@@ -101,7 +101,10 @@
         "erreurInscription": "Please choose another identifier",
         "erreurIdFlag": "Please choose a positive identifier",
         "ok":"Modified profile",
-        "souvenir": "Remember me"
+        "souvenir": "Remember me",
+        "passwordConfirmation": "Password confirmation",
+        "passwordConfirmationmess": "Password confirmation required",
+        "erreurPasswordCFlag": "The password and the confirmation password shouldn't be different"
     },
     "admin":{
         "login": "Identifier",
