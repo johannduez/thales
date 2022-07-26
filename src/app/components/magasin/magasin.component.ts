@@ -32,13 +32,13 @@ export class MagasinComponent implements OnInit {
 
   ngOnInit(): void {
     this.srv.findbyorderbytarifasc().subscribe((data: Article[])=>{
-     /* this.articlesBase2 = data;
+      this.articlesBase2 = data;
       for(let art of this.articlesBase2){
          art.retrievedImage = this.domSanitizer.bypassSecurityTrustUrl('data:image/jepg;base64,' + art.picByte);
-      }*/
-      sessionStorage.setItem("test",JSON.stringify(data));
+      }
+     // sessionStorage.setItem("test",JSON.stringify(data));
     });
-    this.articlesBase2=JSON.parse( sessionStorage.getItem("test"));
+    //this.articlesBase2=JSON.parse( sessionStorage.getItem("test"));
     for(let art of this.articlesBase2){
          art.retrievedImage = this.domSanitizer.bypassSecurityTrustUrl('data:image/jepg;base64,' + art.picByte);
         this.articles.push(art);
@@ -73,7 +73,7 @@ export class MagasinComponent implements OnInit {
   }
 
   filtre(){
-    /*let fordi:string="0";
+    let fordi:string="0";
     if(this.cOrdi==1)fordi="1";
     let ftel:string="0";
     if(this.cTel==1)ftel="1";
@@ -84,13 +84,13 @@ export class MagasinComponent implements OnInit {
       for(let art of this.articlesBase2){
          art.retrievedImage = this.domSanitizer.bypassSecurityTrustUrl('data:image/jepg;base64,' + art.picByte);
       }
-    });*/
+    });/*
     this.articles = new Array<Article>();
     for(let art of this.articlesBase2){
       if(this.filtreCombo(art) && this.filtreNom(art) && this.filtrePrix(art)){
         this.articles.push(art);
       }
-    }
+    }*/
 
 
   }

@@ -115,7 +115,7 @@
     <div class=" col-10">
         <div class="liste d-flex flex-wrap col-11">
 
-            <div class="article col-3" *ngFor="let art of articles | paginate: { itemsPerPage: 8, currentPage: pages }">
+            <div class="article col-3" *ngFor="let art of articlesBase2 | paginate: { itemsPerPage: 8, currentPage: pages }">
                 <div class="zoom-image">
                     <img [src]="art.retrievedImage" class="rounded mx-auto d-block" alt="...">
                 </div>
