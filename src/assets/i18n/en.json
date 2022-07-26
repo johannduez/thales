@@ -60,12 +60,15 @@
         "quantite2":"Quantity",
         "articles":"Articles",
         "prixtotal":"Total price",
+        "prix":"Price",
         "ajouter":"Add",
         "viderpanier":"Emptying your shopping cart",
         "validerpanier":"Validate the shopping cart",
         "retourpanier":"Return to the shopping cart",
         "valider":"Validate your order",
-        "supprimer":"Delete"
+        "supprimer":"Delete",
+        "date":"Date"
+        
     },
     "valider":{
         "felicitation":"Congratulations",
@@ -97,8 +100,8 @@
         "inscription": "Registration",
         "erreurInscription": "Please choose another identifier",
         "erreurIdFlag": "Please choose a positive identifier",
-        "ok":"Modified profile"
-        
+        "ok":"Modified profile",
+        "souvenir": "Remember me"
     },
     "admin":{
         "login": "Identifier",
