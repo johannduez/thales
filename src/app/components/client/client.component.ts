@@ -26,7 +26,9 @@ export class ClientComponent implements OnInit {
     console.log("ClientComponent");
     this.commande=JSON.parse(sessionStorage.getItem("commande"));
     this.service.findbyId(this.commande.client.id).subscribe(
-    response => {this.client=response});
+    response => {
+      this.client=response;
+    this.passwordConfirmation= this.client.password});
 
     this.registerForm = new FormGroup({
       nom: new FormControl(this.client.nom, [Validators.required]),
