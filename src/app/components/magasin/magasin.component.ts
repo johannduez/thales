@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
+import { DomSanitizer } from '@angular/platform-browser';
 import { Article } from 'src/app/classes/article';
 import { Commande } from 'src/app/classes/commande';
 import { LigneCommande } from 'src/app/classes/ligne-commande';
@@ -27,55 +28,17 @@ articlesBase2:Article[]=[];
   fPMax:number=10000;
   commande:Commande=new Commande();
   constructor(private srv : ArticleService,private http:HttpClient,
-    private dialog: MatDialog,private commerceSrv : CommandeService) { 
-/* this.http.get("http://localhost:8080/commerce/article/findall").subscribe(
-      reponse=>{this.Mylist=reponse;},
-      err=>{console.log("***********Ko");}
-    );*/
-   
-
-
+    private dialog: MatDialog,private commerceSrv : CommandeService,private domSanitizer: DomSanitizer) { 
   }
 
   ngOnInit(): void {
- /*this.http.get<Article[]>("http://localhost:8080/commerce/article/findall").subscribe(
-      reponse=>{
-        console.log(reponse);
-        reponse.forEach(entry=> {
-          //console.log(entry);
-          let article:Article=new Article();
-          article.categorie=entry.categorie;
-          article.description=entry.description;
-          article.id=entry.id;
-          article.image=entry.image;
-          article.nom=entry.nom;
-          article.tarif=entry.tarif;
-          //console.log(article);
-          this.articlesBase.push(article);
-          this.articlesBase2.push(article);
-        })
-      
-      },
-      err=>{console.log("***********Ko");}
-    );*/
     this.srv.findbyorderbytarifasc().subscribe((data: Article[])=>{
       this.articlesBase2 = data;
+      for(let art of this.articlesBase2){
+         art.retrievedImage = this.domSanitizer.bypassSecurityTrustUrl('data:image/jepg;base64,' + art.picByte);
+      }
     });
     this.commande=JSON.parse(sessionStorage.getItem("commande"));
-
- 
-/*console.log(this.articlesBase);
-console.log(this.articlesBase2);
-console.log(this.articlesBase.length);
-this.articlesBase2.forEach(entry=> {console.log(entry);});
-for (const article of this.articlesBase) {
-  console.log(article.nom);
-}
-for (let index = 0; index < this.articlesBase2.length; index++) {
-  const element = this.articlesBase[index];
-  console.log(element.nom);
-}
-    this.filtre();*/
   }
   filtrePrix(article:Article){
     if(this.fPMin!=0 && this.fPMin!=undefined){
@@ -103,19 +66,7 @@ for (let index = 0; index < this.articlesBase2.length; index++) {
     if(this.cElec==1 && article.categorie=="Electroménager") return true;
     return false;
   }
-  /*filtre(){
-    this.articles= new Array<Article>();
-    
-    for (const article of this.articlesBase) {
-     if(this.filtrePrix(article) && this.filtreNom(article)
-      && this.filtreCombo(article)){
-        this.articles.push(article);
-      
-      }
-    }
-    this.articles.sort((a,b)=> a.tarif-b.tarif);
 
-  }*/
   filtre(){
     let fordi:string="0";
     if(this.cOrdi==1)fordi="1";
@@ -125,6 +76,9 @@ for (let index = 0; index < this.articlesBase2.length; index++) {
     if(this.cElec==1)felec="1";
     this.srv.findfiltretotal(ftel,fordi,felec,this.fPMax,this.fPMin,this.fNom).subscribe((data: Article[])=>{
       this.articlesBase2 = data;
+      for(let art of this.articlesBase2){
+         art.retrievedImage = this.domSanitizer.bypassSecurityTrustUrl('data:image/jepg;base64,' + art.picByte);
+      }
     });
   }
 

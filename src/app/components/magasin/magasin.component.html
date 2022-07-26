@@ -117,7 +117,7 @@
 
             <div class="article col-3" *ngFor="let art of articlesBase2 | paginate: { itemsPerPage: 8, currentPage: pages }">
                 <div class="zoom-image">
-                    <img [src]="art.image" class="rounded mx-auto d-block" alt="...">
+                    <img [src]="art.retrievedImage" class="rounded mx-auto d-block" alt="...">
                 </div>
                 <div>
                     <div class="centre">
