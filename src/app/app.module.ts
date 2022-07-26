@@ -27,7 +27,8 @@ import { HistoriqueComponent } from './components/historique/historique.componen
 import { AdminComponent } from './components/admin/admin.component';
 import { ProfilComponent } from './components/profil/profil.component';
 import { ClientComponent } from './components/client/client.component';
-import { ImageComponent } from './components/image/image.component';
+import { CookieService } from 'ngx-cookie-service';
+
 
 
 
@@ -55,8 +56,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     HistoriqueComponent,
     AdminComponent,
     ProfilComponent,
-    ClientComponent,
-    ImageComponent
+    ClientComponent
   ],
   imports: [
     BrowserModule,
@@ -76,7 +76,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     })
     
   ],
-  providers: [],
+  providers: [CookieService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

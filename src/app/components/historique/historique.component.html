@@ -2,19 +2,19 @@
 <table class="table mt-5">
     <thead class="thead-dark">
       <tr>
-        <th scope="col">Date</th> 
-        <th scope="col">Article</th>
-        <th scope="col">Quantite</th>
-        <th scope="col">Prix</th>
+        <th scope="col">{{'panier.date' | translate}}</th> 
+        <th scope="col">{{'panier.articles' | translate}}</th>
+        <th scope="col">{{'panier.quantite2' | translate}}</th>
+        <th scope="col">{{'panier.prix' | translate}}</th>
       </tr>
     </thead>
     <tbody>
         <ng-container *ngFor="let list of listCommande">
             <tr class="table-primary">
-                <td colspan="3">{{list.date}}</td>
-                <td>{{list.prixTotal}}</td>
+                <td colspan="3" class="font-weight-bold">{{list.date}}</td>
+                <td class="font-weight-bold">{{list.prixTotal}}</td>
             </tr>
-                <ng-container *ngFor="let lignes of list.lignes; let isFirst = first;">
+                <ng-container *ngFor="let lignes of list.lignes">
                     <tr>
                         <td></td>
                         <td>{{lignes.article.nom}}</td>

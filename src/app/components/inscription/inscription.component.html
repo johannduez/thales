@@ -1,4 +1,4 @@
-<div class="d-flex flex-column align-items-center">
+<div class="d-flex flex-column align-items-center mt-3">
     <div class=" authentification centre col-5">
 
         <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
@@ -12,11 +12,19 @@
             </div>
             <div class="form-group mb-2 pb-2">
                 <label for="password"> {{'client.password' | translate}} </label> 
-                <input formControlName="password" type="text" class="form-control" id="password" placeholder="12345" [(ngModel)]="client.password" required/>
+                <input formControlName="password" type="password" class="form-control" id="password" placeholder="12345" [(ngModel)]="client.password" required/>
                 <div *ngIf="password.invalid && (password.dirty || password.touched )"
                     class="alert alert-danger">
                     {{'client.passwordmess' | translate}}
                 </div>
+            </div>
+            <div class="form-group mb-2 pb-2">
+                <label for="passwordConfirmation"> {{'client.passwordConfirmation' | translate}} </label> 
+                <input formControlName="passwordConfirmation" type="password" class="form-control" id="passwordConfirmation" placeholder="12345" [(ngModel)]="passwordConfirmation"/>
+                <div *ngIf="passwordC.invalid && (passwordC.dirty || passwordC.touched )"
+                class="alert alert-danger">
+                {{'client.passwordConfirmationmess' | translate}}
+            </div>
             </div>
             <div class="form-group mb-2 pb-2">
                 <label for="nom"> {{'client.nom' | translate}} </label> 
@@ -47,9 +55,9 @@
             </div>
         </form>
 
-        <div class="alert alert-danger" *ngIf="erreurFlag">
-            {{'client.erreurInscription' | translate}}
+        <div class="alert alert-danger" *ngIf="(erreurFlag || erreurIdFlag || erreurPasswordCFlag)">
+            <span *ngIf="erreurFlag">{{'client.erreurInscription' | translate}}<br></span>
+            <span *ngIf="erreurIdFlag">{{'client.erreurIdFlag' | translate}}<br></span>
+            <span *ngIf="erreurPasswordCFlag">{{'client.erreurPasswordCFlag' | translate}}<br></span>
         </div>
-        <div class="alert alert-danger" *ngIf="erreurIdFlag">
-            {{'client.erreurIdFlag' | translate}}
-        </div>
+

@@ -60,12 +60,14 @@
         "quantite2":"Quantité",
         "articles":"Articles",
         "prixtotal":"Prix total",
+        "prix":"Prix",
         "ajouter":"Ajouter",
         "viderpanier":"Vider le panier",
         "validerpanier":"Valider le panier",
         "retourpanier":"Retour au panier",
         "valider":"Valider la commande",
-        "supprimer":"Supprimer"
+        "supprimer":"Supprimer",
+        "date":"Date"
     },
     "valider":{
         "felicitation":"Félicitation",
@@ -97,8 +99,13 @@
         "inscription": "Inscription",
         "erreurInscription": "Veuillez choisir un autre identifiant",
         "erreurIdFlag": "Veuillez choisir un identifiant positif",
-        "ok":"Profil modifié"
+        "ok":"Profil modifié",
+        "souvenir": "Se souvenir de moi",
+        "passwordConfirmation": "Confirmation du mot de passe",
+        "passwordConfirmationmess": "Confirmation du mot de passe obligatoire",
+        "erreurPasswordCFlag": "Le mot de passe et le mot de passe de confirmation sont différents"
         
+
     },
     "admin":{
         "login": "Identifiant",

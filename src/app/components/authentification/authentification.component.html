@@ -3,7 +3,7 @@
         <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
             <div class="form-group mb-2 pb-2">
                 <label for="id">  {{'client.id' | translate}} </label> 
-                <input formControlName="id" type="number" class="form-control" id="id" placeholder="Identifiant" [(ngModel)]="client.id" required>
+                <input formControlName="id" type="number" class="form-control" id="id" placeholder="Identifiant" [(ngModel)]="client.id" value="{{client.id}}" required>
                 <div *ngIf="id.invalid && (id.dirty || id.touched )"
                     class="alert alert-danger">
                     {{'client.idmess' | translate}}
@@ -11,12 +11,17 @@
             </div>
             <div class="form-group mb-2 pb-2">
                 <label for="password">  {{'client.password' | translate}} </label> 
-                <input formControlName="password" type="text" class="form-control" id="password" placeholder="Password" [(ngModel)]="client.password" required>
+                <input formControlName="password" type="password" class="form-control" id="password" placeholder="Password" [(ngModel)]="client.password" value="{{client.password}}" required>
                 <div *ngIf="password.invalid && (password.dirty || password.touched )"
                     class="alert alert-danger">
                     {{'client.passwordmess' | translate}}
                 </div>
             </div>
+
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="souvenir" [(ngModel)]="souvenir" (change)="cbox()" [ngModelOptions]="{standalone: true}"/>
+                <label class="form-check-label" for="souvenir"> {{'client.souvenir' | translate}} </label>
+              </div>
 
             <div class="form-check authentification d-flex justify-content-end">
                 <button  [disabled]="!registerForm.valid" class="btn btn-primary m-3">{{'client.connexion' | translate}}</button>
@@ -29,4 +34,5 @@
 
     </div>
 </div>
+
 
