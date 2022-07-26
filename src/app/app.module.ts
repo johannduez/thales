@@ -28,6 +28,7 @@ import { AdminComponent } from './components/admin/admin.component';
 import { ProfilComponent } from './components/profil/profil.component';
 import { ClientComponent } from './components/client/client.component';
 import { CookieService } from 'ngx-cookie-service';
+import { ConfirmationDialogComponent } from './components/confirmation-dialog/confirmation-dialog.component';
 
 
 
@@ -56,7 +57,9 @@ export function HttpLoaderFactory(http: HttpClient) {
     HistoriqueComponent,
     AdminComponent,
     ProfilComponent,
-    ClientComponent
+    ClientComponent,
+    ConfirmationDialogComponent
+    
   ],
   imports: [
     BrowserModule,

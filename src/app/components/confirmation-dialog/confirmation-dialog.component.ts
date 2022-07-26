@@ -1,0 +1,26 @@
+import { Component, OnInit } from '@angular/core';
+import { MatDialogRef } from '@angular/material/dialog';
+
+@Component({
+  selector: 'app-confirmation-dialog',
+  templateUrl: './confirmation-dialog.component.html',
+  styleUrls: ['./confirmation-dialog.component.css']
+})
+export class ConfirmationDialogComponent implements OnInit {
+  title: string="message de confirmation";
+  message: string="Voulez vous supprimer l'article?";
+  constructor(public dialogRef: MatDialogRef<ConfirmationDialogComponent>) { }
+
+  ngOnInit(): void {
+  }
+ onCommand(): void {
+    this.dialogRef.close("ok");
+  }
+  onDelete(): void {
+    this.dialogRef.close("ko");
+  }
+}
+export class ConfirmDialogModel {
+  constructor() {
+  }
+}

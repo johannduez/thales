@@ -48,7 +48,10 @@
     },
     "dialogue":{
         "message":"The item is added to the cart",
-        "fermer":"close"
+        "fermer":"close",
+        "message2":"Do you want to delete the article?",
+        "oui":"Yes",
+        "non":"No"
     },
     "panier":{
         "titre1":"Choose what you want to buy",

@@ -51,12 +51,7 @@ export class ArticleComponent implements OnInit {
   get description() { return this.registerForm.get('description'); }
   get nom() { return this.registerForm.get('nom'); }
   get f() { return this.registerForm.controls; }
-  supprimer(){
-   this.artSrv.delete(this.article.id).subscribe(
-    reponse=>{this.router.navigate(['/articles']);}
-   );
- 
-  }
+
   onSubmit(){
     const uploadImageData = new FormData();
     if(this.selectedFile!=undefined)

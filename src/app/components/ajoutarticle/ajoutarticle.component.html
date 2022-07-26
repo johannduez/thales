@@ -37,7 +37,7 @@
                 <label>
                     {{'article.image' | translate}}
                 </label>
-                <input type="file" (change)="onFileChanged($event)" accept="image/jpeg">
+                <input  formControlName="file" type="file" (change)="onFileChanged($event)" accept="image/jpeg">
                  <input formControlName="image" type="hidden" class="form-control" placeholder=" {{'article.image' | translate}}" maxlength="250"
                     [(ngModel)]="article.image" />
                 <div *ngIf="image.invalid && (image.dirty || image.touched)" class="alert alert-danger">

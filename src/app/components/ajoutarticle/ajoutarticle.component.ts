@@ -25,7 +25,8 @@ export class AjoutarticleComponent implements OnInit {
       description: new FormControl(this.article.description, [Validators.required]),
       tarif: new FormControl(this.article.tarif, [Validators.required]),
       categorie: new FormControl(this.article.categorie, [Validators.required]),
-      image: new FormControl(this.article.image, [Validators.required])
+      image: new FormControl(this.article.image, [Validators.required]),
+      file: new FormControl(null, [Validators.required])
   });
     
 }
@@ -66,6 +67,7 @@ export class AjoutarticleComponent implements OnInit {
   onReset() {
         this.submitted = false;
         this.registerForm.reset();
+       
   } 
   public onFileChanged(event) {
     //Select File

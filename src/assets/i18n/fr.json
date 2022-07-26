@@ -48,7 +48,10 @@
     },
     "dialogue":{
         "message":"L'article a été ajouté au panier",
-        "fermer":"Fermer"
+        "fermer":"Fermer",
+        "oui":"Oui",
+        "non":"Non",
+        "message2":"Voulez-vous supprimer l'article?"
     },
     "panier":{
         "titre1":"Fais ta propre sélection",

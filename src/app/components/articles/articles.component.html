@@ -19,11 +19,13 @@
             <th>
                 {{'article.image'|translate}}
             </th>
+            <th>
+            </th>
         </tr>
 
             <tr *ngFor="let article of articles"> 
-                <td><a routerLink="/article/{{article.id}}">
-                    {{article.id}}</a>
+                <td>
+                    {{article.id}}
                 </td>
                 <td>
                     {{article.nom }}
@@ -38,7 +40,17 @@
                     {{article.categorie }}
                 </td>
                 <td><img [src]="article.retrievedImage"
-                    class="rounded mx-auto d-block" alt="..."></td>
+                    class="rounded mx-auto d-block" alt="...">
+                </td>
+                <td>
+                    <button class="btn btn-primary bg-primary"  (click)="modifier(article)">{{'article.modifier' |
+                        translate}}</button>
+                    
+                </td>
+                <td>
+                    <button class="btn btn-primary bg-primary"  (click)="supprimer(article)">{{'article.supprimer' |
+                        translate}}</button>
+                </td>
             </tr>
 
 
