@@ -15,6 +15,7 @@ import { HistoriqueComponent } from './components/historique/historique.componen
 import { AdminComponent } from './components/admin/admin.component';
 import { ProfilComponent } from './components/profil/profil.component';
 import { ClientComponent } from './components/client/client.component';
+import { ImageComponent } from './components/image/image.component';
 
 const routes: Routes = [{path:'magasin',component:MagasinComponent},
 {path:'authentification',component:AuthentificationComponent},
@@ -30,7 +31,8 @@ const routes: Routes = [{path:'magasin',component:MagasinComponent},
 {path:'historique',component:HistoriqueComponent},
 {path:'admin',component:AdminComponent},
 {path:'profil',component:ProfilComponent},
-{path:'client',component:ClientComponent}];
+{path:'client',component:ClientComponent},
+{path:'image',component:ImageComponent}];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

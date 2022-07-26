@@ -17,7 +17,7 @@ export class ArticleService {
  
   constructor(private httpClient: HttpClient) { }
  
- create(data)
+ /*create(data)
   {
    const body = JSON.stringify(data);
 
@@ -28,7 +28,7 @@ export class ArticleService {
       err => {
         console.log("crud service post KO")
       });
-  }
+  }*/
   
   getAll(): Observable<Article[]> {
     return this.httpClient.get<Article[]>(this.apiServer);
@@ -46,12 +46,15 @@ export class ArticleService {
     return this.httpClient.get<Article>(this.apiServer + '/' + id);
     
   }
-  update( article): Observable<Article> {
-   return this.httpClient.put<Article>(this.apiServer , JSON.stringify(article), this.httpOptions);
-    
-  }
-    delete(id){
+  
+  delete(id){
     return this.httpClient.delete<Article>(this.apiServer + '/' + id, this.httpOptions);
+  }
+  update( uploadImageData : FormData) {
+   return  this.httpClient.put(this.apiServer, uploadImageData, { observe: 'response' }) ;
+  }
+ create( uploadImageData : FormData) {
+   return  this.httpClient.post(this.apiServer, uploadImageData, { observe: 'response' }) ;
   }
 
 

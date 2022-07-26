@@ -6,4 +6,7 @@ export class Article {
     image:string="";
     categorie:string="";
     version:number=0;
+    picByte:any;
+    retrievedImage: any;
+  
 }

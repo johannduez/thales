@@ -27,6 +27,7 @@ import { HistoriqueComponent } from './components/historique/historique.componen
 import { AdminComponent } from './components/admin/admin.component';
 import { ProfilComponent } from './components/profil/profil.component';
 import { ClientComponent } from './components/client/client.component';
+import { ImageComponent } from './components/image/image.component';
 
 
 
@@ -54,7 +55,8 @@ export function HttpLoaderFactory(http: HttpClient) {
     HistoriqueComponent,
     AdminComponent,
     ProfilComponent,
-    ClientComponent
+    ClientComponent,
+    ImageComponent
   ],
   imports: [
     BrowserModule,

@@ -13,6 +13,7 @@ export class AjoutarticleComponent implements OnInit {
   registerForm: FormGroup;
   submitted = false;
   article:Article=new Article();
+    selectedFile: File;
   constructor(private formBuilder: FormBuilder,private srv : ArticleService) { 
     
   }
@@ -44,7 +45,21 @@ export class AjoutarticleComponent implements OnInit {
             return;
         }
     
-        this.srv.create(this.article);
+       /* this.srv.create(this.article);*/
+       const uploadImageData = new FormData();
+        if(this.selectedFile!=undefined)
+          uploadImageData.append('imageFile', this.selectedFile, this.selectedFile.name);
+        else uploadImageData.append('imageFile',this.selectedFile);  
+        uploadImageData.append('id',this.article.id.toString());
+        uploadImageData.append('categorie',this.article.categorie);
+        uploadImageData.append('description',this.article.description);
+        uploadImageData.append('nom',this.article.nom);
+        uploadImageData.append('tarif',this.article.tarif.toString());
+        uploadImageData.append('version',this.article.version.toString());
+        uploadImageData.append('picByte',this.article.picByte);
+
+
+         this.srv.create(uploadImageData).subscribe();
         this.registerForm.reset();
 
   }
@@ -52,5 +67,10 @@ export class AjoutarticleComponent implements OnInit {
         this.submitted = false;
         this.registerForm.reset();
   } 
+  public onFileChanged(event) {
+    //Select File
+    this.selectedFile = event.target.files[0];
+    this.article.image=this.selectedFile.name
+  }
 
 }

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DomSanitizer } from '@angular/platform-browser';
 import { Article } from 'src/app/classes/article';
 import { ArticleService } from 'src/app/services/article.service';
 
@@ -9,11 +10,15 @@ import { ArticleService } from 'src/app/services/article.service';
 })
 export class ArticlesComponent implements OnInit {
   articles:Article[]=[];
-  constructor(private artSrv : ArticleService) { }
+  constructor(private artSrv : ArticleService,private domSanitizer: DomSanitizer) { }
 
   ngOnInit(): void {
      this.artSrv.getAll().subscribe((data: Article[])=>{
       this.articles = data;
+      for(let art of this.articles){
+         art.retrievedImage = this.domSanitizer.bypassSecurityTrustUrl('data:image/jepg;base64,' + art.picByte);
+
+      }
     });
   }
 
