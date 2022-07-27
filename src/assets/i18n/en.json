@@ -124,6 +124,31 @@
         "prenom":"Firstname",
         "adresse":"Address"
 
+    },
+    "accueil":{
+        "sectionPresentation": "Presentation",
+        "sectionServices": "Services",
+        "sectionLieu": "Location",
+
+        "presentationTitre": "About ",
+        "presentationTitre2": "Us",
+        "presentationText": "We are specialists in home appliances and multimedia. Our offer gathers the daily essentials to make your life as easy as possible.",
+        "presentationText2": "We put all our know-how at the service of our customers, thanks to our exclusive brands and our many support services such as delivery within the hour in Paris, next day delivery throughout France, support 7 days a week, commissioning, troubleshooting, help with remote control or at home, subscription, rental and offers of reconditioned products.",
+    
+        "servicesTitre": "What we propose as ",
+        "servicesTitre2": "Services ",
+        "servicesIconeTitre1": "Qualité / Prix",
+        "servicesIconeTitre2": "Quality / Price",
+        "servicesIconeTitre3": "Support",
+        "servicesIconeTitre4": "Global",
+        "servicesIconeDescription1": "The best possible quality / price ratio for our customers",
+        "servicesIconeDescription2": "A fast delivery in France and in a few days elsewhere",
+        "servicesIconeDescription3": "Always available for a technical problem 7 days a week",
+        "servicesIconeDescription4": "Ambition to expand globally in progress",
+
+        "lieuTitre": "Meet ",
+        "lieuTitre2": "Us"
+        
     }
 
 }

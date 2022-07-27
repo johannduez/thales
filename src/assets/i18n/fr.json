@@ -124,5 +124,30 @@
         "prenom":"Prenom",
         "adresse":"Adresse"
 
+    },
+    "accueil":{
+        "sectionPresentation": "Présentation",
+        "sectionServices": "Services",
+        "sectionLieu": "Lieu",
+
+        "presentationTitre": "À propos de ",
+        "presentationTitre2": "Nous",
+        "presentationText": "Nous sommes spécialiste des équipements de la maison en électroménager et multimédia. Notre offre regroupe les indispensables du quotidien afin de rendre votre vie la plus facile possible.",
+        "presentationText2": "Nous mettons tout notre savoir-faire au service de nos clients, grâce à nos marques exclusives et nos nombreux services d’accompagnement comme la livraison dans l’heure à Paris, la livraison le lendemain dans toute la France, l’accompagnement 7j/7, la mise en service, le dépannage, l’aide à la prise en main à distance ou à domicile, l’abonnement, la location et les offres de produits reconditionnés.",
+    
+        "servicesTitre": "Ce qu'on propose comme ",
+        "servicesTitre2": "Services ",
+        "servicesIconeTitre1": "Qualité / Prix",
+        "servicesIconeTitre2": "Livraison",
+        "servicesIconeTitre3": "Support",
+        "servicesIconeTitre4": "Mondial",
+        "servicesIconeDescription1": "Le meilleur rapport qualité / prix possible pour nos clients",
+        "servicesIconeDescription2": "Une livraison rapide dans toute la France",
+        "servicesIconeDescription3": "Toujours à l'écoute pour un problème technique 7j/7",
+        "servicesIconeDescription4": "L'ambition de s'étendre mondialement en cours",
+
+        "lieuTitre": "Retrouvez ",
+        "lieuTitre2": "Nous"
+        
     }
 }
