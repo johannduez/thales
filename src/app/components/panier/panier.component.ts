@@ -60,30 +60,14 @@ export class PanierComponent implements OnInit {
 
      this.commerceSrv.sauvegarde(this.commande);
   }
-  supprimer(ligne:LigneCommande){
-      const index: number = this.commande.lignes.indexOf(ligne);
-      if (index !== -1) {
-        this.commande.lignes.splice(index,1);
-      }
-      this.commande.prixTotal-=ligne.prix;
-      this.commerceSrv.sauvegarde(this.commande);
-  }
   ajouter(ligne:LigneCommande){
-    ligne.quantite+=1;
-    ligne.prix+=ligne.article.tarif;
-    this.commande.prixTotal+=ligne.article.tarif;
-    this.commerceSrv.sauvegarde(this.commande);
+    this.commerceSrv.ajouter(this.commande,ligne);
   }
   enlever(ligne:LigneCommande){
-    if(ligne.quantite>1){
-      ligne.quantite-=1;
-      ligne.prix-=ligne.article.tarif;
-      this.commande.prixTotal-=ligne.article.tarif;
-      this.commerceSrv.sauvegarde(this.commande);
-    }
-    else{
-      this. supprimer(ligne);
-    }
+    this.commerceSrv.enlever(this.commande,ligne);
+  }
+  supprimer(ligne:LigneCommande){
+    this.commerceSrv.supprimer(this.commande,ligne);
   }
 
 }

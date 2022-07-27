@@ -60,6 +60,31 @@ export class CommandeService {
       let str:string=JSON.stringify(commande);
       sessionStorage.setItem("commande",str);
     }
+    ajouter(commande:Commande,ligne:LigneCommande){
+      ligne.quantite+=1;
+      ligne.prix+=ligne.article.tarif;
+      commande.prixTotal+=ligne.article.tarif;
+      this.sauvegarde(commande);
+    }
+    enlever(commande:Commande,ligne:LigneCommande){
+    if(ligne.quantite>1){
+      ligne.quantite-=1;
+      ligne.prix-=ligne.article.tarif;
+      commande.prixTotal-=ligne.article.tarif;
+      this.sauvegarde(commande);
+    }
+    else{
+      this.supprimer(commande,ligne);
+    }
+  }
+    supprimer(commande:Commande,ligne:LigneCommande){
+      const index: number = commande.lignes.indexOf(ligne);
+      if (index !== -1) {
+        commande.lignes.splice(index,1);
+      }
+      commande.prixTotal-=ligne.prix;
+      this.sauvegarde(commande);
+  }
 
 
 }

@@ -34,6 +34,7 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from "@angular/material/form-field";
+import { PanierDialogComponent } from './components/panier-dialog/panier-dialog.component';
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
@@ -60,7 +61,8 @@ export function HttpLoaderFactory(http: HttpClient) {
     AdminComponent,
     ProfilComponent,
     ClientComponent,
-    ConfirmationDialogComponent
+    ConfirmationDialogComponent,
+    PanierDialogComponent
     
   ],
   imports: [

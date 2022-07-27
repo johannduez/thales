@@ -9,6 +9,7 @@ import { LigneCommande } from 'src/app/classes/ligne-commande';
 import { ArticleService } from 'src/app/services/article.service';
 import { CommandeService } from 'src/app/services/commande.service';
 import { DialogComponent } from '../dialog/dialog.component';
+import { PanierDialogComponent, PanierDialogModel } from '../panier-dialog/panier-dialog.component';
 
 @Component({
   selector: 'app-magasin',
@@ -109,6 +110,14 @@ export class MagasinComponent implements OnInit {
      
   }
   panier(){
-  this.router.navigate(['/panier']);
+ // this.router.navigate(['/panier']);
+    const dialogData = new PanierDialogModel();
+    const dialogRef = this.dialog.open(PanierDialogComponent, {
+      maxWidth: "600px",
+      data: dialogData
+    });
+    dialogRef.afterClosed().subscribe(dialogResult => {
+      this.commande=JSON.parse(sessionStorage.getItem("commande"));
+    });
   }
 }

@@ -1,0 +1,51 @@
+<div class="mx-2">
+    <table class="table table-striped table-bordered ">
+        <tr>
+            <th>
+                {{'panier.articles'|translate}}
+            </th>
+            <th>
+            </th>
+            <th>
+                {{'panier.quantite2'|translate}}
+            </th>
+            <th>
+            </th>
+            <th>
+                {{'panier.prixtotal'|translate}}
+            </th>
+            <th>
+            </th>
+        </tr>
+        <tr *ngFor="let ligne of commande.lignes">
+            <td>
+                <span class="d-flex align-items-end">{{ligne.article.nom }}</span>
+            </td>
+            <td>
+                <button (click)="enlever(ligne)" class="border border-white"><img src="assets/img/dash.svg" /></button>
+            </td>
+            <td>
+                <span class="d-flex align-items-end">{{ligne.quantite }}</span>
+            </td>
+            <td>
+                <button (click)="ajouter(ligne)" class="border border-white"><img src="assets/img/plus.svg" /></button>
+
+            </td>
+            <td>
+                <span class="d-flex align-items-end">{{ligne.prix }}</span>
+            </td>
+            <td>
+                <button class="btn-danger btn bg-danger btn-sm" (click)="supprimer(ligne)">
+                    {{'panier.supprimer'|translate}}
+
+                </button>
+            </td>
+        </tr>
+
+
+    </table>
+</div>
+
+<div mat-dialog-actions>
+    <button mat-raised-button (click)="onCommand()">{{'dialogue.fermer' | translate}}</button>
+</div>
