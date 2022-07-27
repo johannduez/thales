@@ -21,6 +21,7 @@ export class InscriptionComponent implements OnInit {
   constructor(private router: Router, private service: ClientService) { }
 
   ngOnInit(): void {
+    this.client.id=0;
     this.registerForm = new FormGroup({
       id: new FormControl(this.client.id, [Validators.required]),
       password: new FormControl(this.client.password, [Validators.required]),

@@ -26,16 +26,29 @@
     background-position: center;
     min-height: 180px;
 }
-
-.imageEntete h1 {
-    font-family: Arial black;
-    font-weight: bold;
-    color: red;
-    font-size: 3.5em;
+@media screen and (min-width: 601px) {
+    .imageEntete h1 {
+        font-family: Arial black;
+        font-weight: bold;
+        color: red;
+        font-size: 3.5em;
+    }
+    .imageEntete h3 {
+        font-family: Segoe Script;
+         color: white;
+        font-size: 2.5em;
+    }
 }
-
-.imageEntete h3 {
-    font-family: Segoe Script;
-    color: white;
-    font-size: 2.5em;
+@media screen and (max-width: 600px) {
+    .imageEntete h1 {
+        font-family: Arial black;
+        font-weight: bold;
+        color: red;
+        font-size: 1.5em;
+    }
+    .imageEntete h3 {
+        font-family: Segoe Script;
+        color: white;
+        font-size: 1.5em;
+    }
 }

@@ -1,6 +1,6 @@
 
 <div class=" d-flex flex-row">
-    <div class=" col-2">
+    <div class=" col-2 d-none d-sm-block">
         <!--<form:form method="POST" modelAttribute="filtre">-->
         <div *ngIf="commande!=null" class="m-2 d-flex flex-row justify-content-center">
             
@@ -144,10 +144,10 @@
         </div>
         <!--  </form:form>-->
     </div>
-    <div class=" col-10">
+    <div class=" col-10 col-sm-12">
         <div class="liste d-flex flex-wrap col-11">
 
-            <div class="article col-3" *ngFor="let art of articlesBase2 | paginate: { itemsPerPage: 8, currentPage: pages }">
+            <div class="article col-md-3 col-sm-4" *ngFor="let art of articlesBase2 | paginate: { itemsPerPage: 8, currentPage: pages }">
                 <div class="zoom-image">
                     <img [src]="art.retrievedImage" class="rounded mx-auto d-block" alt="...">
                 </div>

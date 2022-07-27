@@ -27,7 +27,7 @@ export class AuthentificationComponent implements OnInit {
       password: new FormControl(this.client.password, [Validators.required])
   });
 
-    if(this.cookie.get("user") != null){
+    if(this.cookie.check("user")){
       let cookieA: Cookieauthentification = JSON.parse(this.cookie.get("user"));
       this.client.id = cookieA.id;
       this.client.password = cookieA.password;
@@ -46,12 +46,11 @@ export class AuthentificationComponent implements OnInit {
 
         if(response != null){
           this.client = response;
-          
           if(this.souvenir){
             let cookieAuth : Cookieauthentification = new Cookieauthentification();
             cookieAuth.id = this.client.id;
             cookieAuth.password = this.client.password;
-      
+            this.cookie.delete('user');
             this.cookie.set('user',JSON.stringify(cookieAuth));
           }
 
@@ -75,8 +74,6 @@ export class AuthentificationComponent implements OnInit {
     );
   }
 
-  cbox(){
-    this.souvenir = !this.souvenir;
-  }
+ 
 
 }
