@@ -3,10 +3,12 @@
     <div class=" col-2">
         <!--<form:form method="POST" modelAttribute="filtre">-->
         <div *ngIf="commande!=null" class="m-2 d-flex flex-row justify-content-center">
+            
             <div >
-                <img src="assets/img/basket.svg" class="panier rounded mx-auto d-block" alt="...">
+                <a (click)="panier()"><img src="assets/img/basket.svg" class="panier rounded mx-auto d-block" alt="..."></a>
             </div>
-            <div class="prix m-2"> {{commande.prixTotal}} €</div>
+            <div class="prix m-2"> <a (click)="panier()">{{commande.prixTotal}} € </a></div>
+            
         </div>
 
         <div class="card m-2 mt-5">

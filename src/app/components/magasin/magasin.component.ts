@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { DomSanitizer } from '@angular/platform-browser';
+import { Router } from '@angular/router';
 import { Article } from 'src/app/classes/article';
 import { Commande } from 'src/app/classes/commande';
 import { LigneCommande } from 'src/app/classes/ligne-commande';
@@ -26,8 +27,9 @@ export class MagasinComponent implements OnInit {
   fPMin:number=0;
   fPMax:number=10000;
   commande:Commande=new Commande();
-  constructor(private srv : ArticleService,private http:HttpClient,
-    private dialog: MatDialog,private commerceSrv : CommandeService,private domSanitizer: DomSanitizer) { 
+  constructor(private router:Router,private srv : ArticleService,
+    private dialog: MatDialog,private commerceSrv : CommandeService,
+    private domSanitizer: DomSanitizer) { 
   }
 
   ngOnInit(): void {
@@ -105,5 +107,8 @@ export class MagasinComponent implements OnInit {
     this.dialog.open(DialogComponent, dialogConfig);
  
      
+  }
+  panier(){
+  this.router.navigate(['/panier']);
   }
 }
