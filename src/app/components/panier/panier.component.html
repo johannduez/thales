@@ -27,7 +27,7 @@
                         </label>
                     </div>
                     <div class="col-md-10  col-sm-12">
-                        <select formControlName="idarticle" class="form-select col-8 lignepadding" aria-label="Default select example"
+                        <select formControlName="idarticle" class="form-select col-12 lignepadding" aria-label="Default select example"
                             id="idArticle" name="article.id" [(ngModel)]="idarticle">
                                 <option *ngFor="let art of articles" [value]="art.id">{{art.nom}} / {{art.tarif}} €
                                 </option>
@@ -60,7 +60,7 @@
             </form>
 
         </div>
-        <div class="col-md-6  mx-2 col-sm-8">
+        <div class="col-md-6  mx-2 col-sm-12">
             <table class="table table-striped table-bordered ">
                 <tr>
                     <th>
