@@ -7,8 +7,7 @@ import { MatDialogRef } from '@angular/material/dialog';
   styleUrls: ['./confirmation-dialog.component.css']
 })
 export class ConfirmationDialogComponent implements OnInit {
-  title: string="message de confirmation";
-  message: string="Voulez vous supprimer l'article?";
+
   constructor(public dialogRef: MatDialogRef<ConfirmationDialogComponent>) { }
 
   ngOnInit(): void {
