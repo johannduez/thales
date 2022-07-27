@@ -5,7 +5,8 @@
         </h1>
     </div>
     <div class="articles">
-        <h3>
+        <div>
+        <span class="titrecomm">
             {{'panier.titre20'|translate}}
             {{commande.client.prenom }}
             {{commande.client.nom }}
@@ -13,9 +14,10 @@
             {{commande.prixTotal }}
             {{'panier.titre22'|translate}}
 
-        </h3>
+        </span>
+        </div>
     </div>
-    <div class="ligne">
+    <div class="ligne mt-5">
         <div class="col-md-5 mx-2 col-sm-12">
             <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
                 <div class="ligne">

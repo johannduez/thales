@@ -14,12 +14,18 @@
     flex-direction: row;
     align-items: baseline;
 }
+.titrecomm{
+    font-size: 1.2em;
+}
 }
 @media screen and (max-width: 600px) {
     .ligne {
         display: flex;
         flex-direction: column;
         align-items: baseline;
+    }
+    .titrecomm {
+        font-size: 1em;
     }
 }
 

@@ -1,0 +1,14 @@
+@media screen and (min-width: 601px) {
+
+    .titrerecap {
+        font-size: 1.5em;
+    }
+}
+
+@media screen and (max-width: 600px) {
+
+
+    .titrerecap {
+        font-size: 1em;
+    }
+}
