@@ -65,7 +65,11 @@
                         {{'panier.articles'|translate}}
                     </th>
                     <th>
+                    </th>
+                    <th>
                         {{'panier.quantite2'|translate}}
+                    </th>
+                    <th>
                     </th>
                     <th>
                         {{'panier.prixtotal'|translate}}
@@ -74,14 +78,20 @@
                     </th>
                 </tr>
                      <tr *ngFor="let ligne of commande.lignes">
-                        <td>
-                            {{ligne.article.nom }}
+                        <td >
+                            <span class="d-flex align-items-end">{{ligne.article.nom }}</span>
                         </td>
                         <td>
-                            {{ligne.quantite }}
+                            <button (click)="ajouter(ligne)" class="border border-white"><img src="assets/img/plus.svg" /></button>
                         </td>
                         <td>
-                            {{ligne.prix }}
+                            <span class="d-flex align-items-end">{{ligne.quantite }}</span>
+                        </td>
+                        <td>
+                            <button (click)="enlever(ligne)" class="border border-white"><img src="assets/img/dash.svg" /></button>
+                        </td>
+                        <td>
+                            <span class="d-flex align-items-end">{{ligne.prix }}</span>
                         </td>
                         <td>
                             <button class="btn-primary btn bg-primary btn-sm" (click)="supprimer(ligne)">
