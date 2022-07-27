@@ -12,10 +12,12 @@
     padding-bottom: 2%;
 }
 
+.chevron {
+    height: 30px;
+}
 img {
     height: 150px;
 }
-
 .centre {
     display: flex;
     justify-content: center;
