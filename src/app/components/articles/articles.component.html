@@ -1,58 +1,62 @@
-<div class="commandes m-5">
-    <table class="table table-striped table-bordered col-11">
-        <tr>
-            <th>
-                {{'article.identifiant'|translate}}
-            </th>
-            <th>
-                {{'article.nom'|translate}}
-            </th>
-            <th>
-                {{'article.description'|translate}}
-            </th>
-            <th>
-                {{'article.tarif'|translate}}
-            </th>
-            <th>
-                {{'article.categorie'|translate}}
-             </th>
-            <th>
-                {{'article.image'|translate}}
-            </th>
-            <th>
-            </th>
-        </tr>
+<div class="d-flex flex-column justify-content-center">
 
-            <tr *ngFor="let article of articles"> 
-                <td>
-                    {{article.id}}
-                </td>
-                <td>
-                    {{article.nom }}
-                </td>
-                <td>
-                    {{article.description }}
-                </td>
-                <td>
-                    {{article.tarif}}
-                </td>
-                <td>
-                    {{article.categorie }}
-                </td>
-                <td><img [src]="article.retrievedImage"
-                    class="rounded mx-auto d-block" alt="...">
-                </td>
-                <td>
-                    <button class="btn btn-primary bg-primary"  (click)="modifier(article)">{{'article.modifier' |
-                        translate}}</button>
-                    
-                </td>
-                <td>
-                    <button class="btn btn-primary bg-primary"  (click)="supprimer(article)">{{'article.supprimer' |
-                        translate}}</button>
-                </td>
-            </tr>
+<div class="m-5 d-flex flex-column col-4">
+    <mat-form-field>
+        <input matInput (keyup)="applyFilter($any($event.target).value)" placeholder="{{'article.filtre'|translate}}">
+    </mat-form-field>
+</div>
 
+<div class="commandes m-2">
+    <div>
+    <mat-table  [dataSource]="dataSource" matSort >
+        <ng-container matColumnDef="id">
+            <mat-header-cell *matHeaderCellDef mat-sort-header> {{'article.identifiant'|translate}} </mat-header-cell>
+            <mat-cell *matCellDef="let row"> {{row.id}} </mat-cell>
+        </ng-container>
 
-    </table>
+        <ng-container matColumnDef="nom">
+            <mat-header-cell *matHeaderCellDef mat-sort-header> {{'article.nom'|translate}} </mat-header-cell>
+            <mat-cell *matCellDef="let row"> {{row.nom}} </mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="description">
+            <mat-header-cell *matHeaderCellDef mat-sort-header> {{'article.description'|translate}} </mat-header-cell>
+            <mat-cell *matCellDef="let row"> {{row.description}} </mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="tarif">
+            <mat-header-cell *matHeaderCellDef mat-sort-header> {{'article.tarif'|translate}} </mat-header-cell>
+            <mat-cell *matCellDef="let row"> {{row.tarif}} </mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="categorie">
+            <mat-header-cell *matHeaderCellDef mat-sort-header> {{'article.categorie'|translate}} </mat-header-cell>
+            <mat-cell *matCellDef="let row"> {{row.categorie}} </mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="image">
+            <mat-header-cell *matHeaderCellDef> {{'article.image'|translate}} </mat-header-cell>
+            <mat-cell *matCellDef="let row"> <img [src]="row.retrievedImage" /> </mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="modifier">
+            <mat-header-cell *matHeaderCellDef></mat-header-cell>
+            <mat-cell *matCellDef="let row">
+                <button class="btn btn-primary bg-primary" (click)="modifier(row)">{{'article.modifier' |
+                    translate}}</button>
+            </mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="supprimer">
+            <mat-header-cell *matHeaderCellDef> </mat-header-cell>
+            <mat-cell *matCellDef="let row">
+                <button class="btn btn-danger bg-danger" (click)="supprimer(row)">{{'article.supprimer' |
+                    translate}}</button>
+            </mat-cell>
+        </ng-container>
+        
+        <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+        <mat-row *matRowDef="let row; columns: displayedColumns;">
+        </mat-row>
+        </mat-table>
+        </div>
+        
+</div>
+<div class="d-flex  flex-column   align-items-center">
+    <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>
+</div>
 </div>

@@ -17,7 +17,8 @@
         "categoriemess":"Category is required",
         "annuler":"Cancel",
         "modifier":"Update",
-        "supprimer":"Delete"
+        "supprimer":"Delete",
+        "filtre":"Filter"
 	},
     "magasin":{
         "ordinateur":"Computer",

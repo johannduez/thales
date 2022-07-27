@@ -17,7 +17,8 @@
         "categoriemess":"La catégorie est obligatoire",
         "annuler":"Annuler",
         "modifier":"Modifier",
-        "supprimer":"Supprimer"
+        "supprimer":"Supprimer",
+        "filtre":"Filtre"
 	},
     "magasin":{
         "ordinateur":"Ordinateur",

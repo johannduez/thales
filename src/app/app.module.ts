@@ -29,9 +29,11 @@ import { ProfilComponent } from './components/profil/profil.component';
 import { ClientComponent } from './components/client/client.component';
 import { CookieService } from 'ngx-cookie-service';
 import { ConfirmationDialogComponent } from './components/confirmation-dialog/confirmation-dialog.component';
-
-
-
+import { MatTableModule } from '@angular/material/table';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatSortModule } from '@angular/material/sort';
+import { MatInputModule } from '@angular/material/input';
+import { MatFormFieldModule } from "@angular/material/form-field";
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
@@ -69,6 +71,11 @@ export function HttpLoaderFactory(http: HttpClient) {
     ReactiveFormsModule,
     NgxPaginationModule,
     MatDialogModule,
+    MatTableModule,
+    MatPaginatorModule,
+    MatSortModule,
+    MatFormFieldModule,
+    MatInputModule,
     BrowserAnimationsModule,
      TranslateModule.forRoot({
       loader: {
