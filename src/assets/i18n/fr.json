@@ -108,7 +108,8 @@
         "souvenir": "Se souvenir de moi",
         "passwordConfirmation": "Confirmation du mot de passe",
         "passwordConfirmationmess": "Confirmation du mot de passe obligatoire",
-        "erreurPasswordCFlag": "Le mot de passe et le mot de passe de confirmation sont différents"
+        "erreurPasswordCFlag": "Le mot de passe et le mot de passe de confirmation sont différents",
+        "modifier":"Modifier"
     },
     "admin":{
         "login": "Identifiant",

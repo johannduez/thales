@@ -108,7 +108,8 @@
         "souvenir": "Remember me",
         "passwordConfirmation": "Password confirmation",
         "passwordConfirmationmess": "Password confirmation required",
-        "erreurPasswordCFlag": "The password and the confirmation password shouldn't be different"
+        "erreurPasswordCFlag": "The password and the confirmation password shouldn't be different",
+        "modifier":"Update"
     },
     "admin":{
         "login": "Identifier",

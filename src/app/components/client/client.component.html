@@ -47,7 +47,7 @@
                 <input type="hidden" [(ngModel)]="client.version" [ngModelOptions]="{standalone: true}">
             </div>
             <div class="button mt-2 d-flex justify-content-end">
-                <button type="submit" [disabled]="!registerForm.valid" class="btn btn-primary">Submit</button>
+                <button type="submit" [disabled]="!registerForm.valid" class="btn btn-primary">{{'client.modifier' | translate}}</button>
             </div>
         </form>
     </div>
