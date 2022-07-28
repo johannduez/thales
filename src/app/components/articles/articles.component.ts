@@ -60,6 +60,7 @@ export class ArticlesComponent implements OnInit {
       if(this.result =="ok"){
            this.artSrv.delete(article.id).subscribe();
            this.articles = this.articles.filter(item => item.id != article.id);
+           this.dataSource = new MatTableDataSource(this.articles);
       }
 
     });

@@ -36,7 +36,7 @@
                 </div>
                 <div class="ligne mt-3">
                     <div class="ligne col-md-8 col-sm-12">
-                        <div class="col-md-5 col-sm-12">
+                        <div class="col-md-3 col-sm-12">
                             <label for="quantite" class=" col-12">
                                 {{'panier.quantite'|translate}}
                               </label>
@@ -54,7 +54,7 @@
                     </div>
                 </div>
                 <div class="viderPanier mb-2">
-                    <input type="button" [disabled]="commande.lignes.length ==0" class="btn btn-primary" (click)="viderpanier()"
+                    <input type="button" [disabled]="commande.lignes.length ==0" class="btn btn-danger" (click)="viderpanier()"
                         name="button" value=" {{'panier.viderpanier'|translate}}" />
                 </div>
             </form>

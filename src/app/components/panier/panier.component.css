@@ -13,9 +13,15 @@
         display: flex;
         flex-direction: row;
         align-items: baseline;
+        padding: 0px;
+        margin: 0px;
     }
     .titrecomm{
         font-size: 1.2em;
+    }
+    [class^='col'] {
+           margin: 0;
+        padding: 0;
     }
 }
 @media screen and (max-width: 800px) {
@@ -29,10 +35,10 @@
     .titrecomm {
         font-size: 1em;
     }
-    [class^='col']{
-        margin: 0;
-        padding: 0;
-    }
+        [class^='col'] {
+            margin: 0;
+            padding: 0;
+        }
 
 }
 
